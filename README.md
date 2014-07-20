@@ -89,18 +89,18 @@ I'm not entirely sure this is a good idea, but here goes:
       }
     }
     
-It starts to get hairy with module modifiers:
+and module modifiers:
 
     .MyModule--myModifier {
-       .MyModule {
+      ...
+      .MyModule {
+        &-myOtherElement {
           ...
-          &-myOtherElement {
+          &--anotherModifier {
             ...
-            &--anotherModifier {
-              ...
-            }
           }
         }
+      }
     }
     
     
