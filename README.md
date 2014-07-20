@@ -39,6 +39,10 @@ Title-case modules, camel-case elements. why-not-dashes ? Because cased names ar
 
 When choosing names, ignore function, concentrate on style. Just because we have a section on our website named *music* doesn't meen that we should name our module `MusicCard`. Name it `Card` instead. But if we need a modifier for a green-tinted card in the section we're currently working one (which happens to be the music section) name it `Card--greenTint`. If it truly is specific to that section then `Card--music` is OK as well.
 
+# Comments
+
+Above each module, describe the purpose of the module, as well as it's scope. Be restrictive and specific so that when someone else looks at it and needs to add some styling, they will know if they should add-on to the module or create a new one.
+
 # Using @extend
     
 Keep `%placeholders` flat, [here's why](http://oliverjash.me/2012/09/07/methods-for-modifying-objects-in-oocss.html). Furthermore, don't try to use @extend just to avoid adding multiple classes to an element in your markup.
