@@ -6,14 +6,14 @@ My futuristic thoughts on structuring a SASS project. Ideas all stolen from BEM,
 # General
 
 - Use class selectors instead of element or attr selectors in most cases.
-- SASS gives you too much power. In part the purpose of this guide is to restrict your use of that power.
+- SASS gives us too much power. In part the purpose of this guide is to restrict our use of that power.
 - Try to avoid nesting, except as described in the DRY section.
 - When in doubt, create a new module instead of bloating an existing module
 - A class name will never have more than 3 dashes, ie: `.MyModule-myElement--myModifier`
 
 # Naming
 
-Title-case modules, camel-case elements. why-not-dashes ? Because cased names are more readable (very objective explanation, I know). Furthermore, if you see a class name that doesntStartWithTitleCase you know that it's not a module. (What?!? not everything is a module?)
+Title-case modules, camel-case elements. why-not-dashes ? Because cased names are more readable (very objective explanation, I know). Furthermore, if we see a class name that doesntStartWithTitleCase we know that it's not a module.
 
     .MyModule {
       .MyModule-myElement {
@@ -53,7 +53,7 @@ Above each module, describe the purpose of the module, as well as it's scope. Be
 
 # Using @extend
     
-Keep `%placeholders` flat, [here's why](http://oliverjash.me/2012/09/07/methods-for-modifying-objects-in-oocss.html). Furthermore, don't try to use @extend just to avoid adding multiple classes to an element in your markup.
+Keep `%placeholders` flat, [here's why](http://oliverjash.me/2012/09/07/methods-for-modifying-objects-in-oocss.html). Furthermore, don't try to use @extend just to avoid adding multiple classes to an element in our markup.
 
     %placeholder {
       // avoid nesting .child rules at all cost...
@@ -63,7 +63,7 @@ Keep `%placeholders` flat, [here's why](http://oliverjash.me/2012/09/07/methods-
       // don't use @extend .MyModule here for reason stated above
     }
 
-Based on the above, do **not** structure `@extend`s the way you structure modules. Don't think of `@extend`s as if they are modules. They should be small pieces of reusable styling, and they should be used sparingly.
+Based on the above, do **not** structure `@extend`s the way we structure modules. Don't think of `@extend`s as if they are modules. They should be small pieces of reusable styling, and they should be used sparingly.
 
 **Todo**: establish a naming convention for `@extend`s ?
 
@@ -104,7 +104,7 @@ It starts to get hairy with module modifiers:
     }
     
     
-Another downside is that doing a full-text search for a class won't take you where you need to go, but if the naming convention is well-established you'll have that in mind when searching anyway.
+Another downside is that doing a full-text search for a class won't take us where we need to go, but if the naming convention is well-established we'll have that in mind when searching anyway.
 
 
 # Namespacing
