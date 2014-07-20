@@ -73,6 +73,7 @@ I don't like how it negatively effects readability, but if one needs to namespac
       ...
     }
 
+
 # Building Blocks
 
 ## Module
@@ -85,26 +86,27 @@ I don't like how it negatively effects readability, but if one needs to namespac
 
 ## Module Modifier
 
+- `--camelCase`
 - Could possibly define margin, top, left, right, or bottom but should probably be avoided in most cases.
 
 ## Element
 
 - `-camelCase`
-- Each element has an associated module ie: MyModule-myElement
+- Each element has an associated module ie: `MyModule-myElement`
 - Should **not** be effected by any module except for it's own. Ie., the module can be nested inside of any other module and it should not effect the appearance of the element.
 
 ## Element Modifier
 
 - `--camelCase`
-- Each modifier has an associated Element ie: MyModule-myElement--myModifier
+- Each modifier has an associated Element ie: `MyModule-myElement--myModifier`
 - Should **not** be effected by another other element except for its own. Ie., the module can be nested inside of any other module and it should not effect the appearance of the modifier.
+
+## State
+
+- `is-camelCase`
+- Used in conjunction with JavaScript
+- **No** style except in context with another rule. For example: `MyModule.is-state`, `MyModule-myElement.is-state`, `MyModule-myElement--myModifier.is-state`, `.is-state MyModule-myElement`, etc.
 
 ## .plainJaneRules
 
 - Should be flat (might be some flexibility for layout rules)
-
-## State
-
-- `is-camelCased`
-- Used in conjunction with JavaScript
-- **No** style except when attached to another rule. Ie., should only have style when attached to `MyModule.is-state`, `MyModule-myElement.is-state`, `MyModule-myElement--myModifier.is-state`, `.is-state MyModule-myElement`, etc.
