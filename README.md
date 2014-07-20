@@ -123,6 +123,7 @@ I don't like how it negatively effects readability, but if we need to namespace,
 - `.TitleCase`
 - Self-contained
 - Most modules should not set their own width, margin, and positioning. By authoring a module to be full-width or inline, it can better adapt to the dimensions of an ancestral context. [(source)](https://github.com/suitcss/suit/blob/master/doc/components.md#adapting-to-ancestral-context)
+
 -- No margin
 -- No top, left, right, bottom
 -- 100% width, or auto width
