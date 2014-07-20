@@ -109,7 +109,7 @@ Another downside is that doing a full-text search for a class won't take you whe
 
 # Namespacing
 
-I don't like how it negatively effects readability, but if one needs to namespace, prepend a lowercase two or three letter abbreviation.
+I don't like how it negatively effects readability, but if we need to namespace, prepend a lowercase two or three letter abbreviation.
 
     .ns-MyModule {
       ...
