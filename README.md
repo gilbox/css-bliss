@@ -42,6 +42,7 @@ I'm not entirely sure this is a good idea, but here goes:
       }
       
       &-myOtherElement {
+        ...
         &--myModifier {
           ...
         }
@@ -49,7 +50,6 @@ I'm not entirely sure this is a good idea, but here goes:
         &--anotherModifier {
           ...
         }
-        ...
       }
     }
     
@@ -60,6 +60,20 @@ Downside is that doing a full-text search for a class won't take you where you n
 These rules should be mostly or completely flat. They include [utility classes](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md#u-utilityName) and [layout rules](http://smacss.com/book/type-layout).
 
 How do you tell them apart? Do a full-text search. Why so flippant? Because I'm not sure that we really need all that `u-` and `l-` prefix stuff.
+
+# Namespacing
+
+I don't like how it negatively effects readability, but if one needs to namespace it could be done like so:
+
+    .ns {
+      @import 'MyModule'
+      @import 'AnotherModule'
+    }
+    
+    // MyModule.scss:
+    &-MyModule {
+      ...
+    }
 
 # Building Blocks
 
