@@ -10,6 +10,7 @@ My futuristic thoughts on structuring a SASS project. Ideas all stolen from BEM,
 - Try to avoid nesting, except as described in the DRY section.
 - **Keep modules small**. When in doubt, create a new module instead of bloating an existing module
 - A class name will never have more than 3 dashes, ie: `.MyModule-myElement--myModifier`
+- Be sure to click the `[ pen ]` links as you encounter them below.
 
 # Naming
 
