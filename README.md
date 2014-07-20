@@ -81,7 +81,7 @@ Do **not** structure `@extend`s the way we structure modules. Don't think of `@e
 
 # DRY
 
-[[pen]](http://codepen.io/gilbox/pen/adAtp?editors=010)
+[[ pen ]](http://codepen.io/gilbox/pen/adAtp?editors=010)
 
 I'm not entirely sure this is a good idea, but here goes: 
 
@@ -131,6 +131,8 @@ I don't like how it negatively effects readability, but if we need to namespace,
 
 
 # Positioning a Module inside of a Module
+
+[[ pen ]](http://codepen.io/gilbox/pen/fwBhe?editors=010)
 
 We will inevitably want to nest modules inside of modules. There are [various ways](http://stackoverflow.com/questions/24724929/smacss-and-bem-how-to-position-module-inside-of-a-module) that we could possibly position one module inside of another. In most cases we should **subclass the child module with an *Element* class in the parent module**. For example:
 
