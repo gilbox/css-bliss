@@ -25,7 +25,7 @@ Title-case modules, camel-case elements.
 Keep `%placeholders` flat, [here's why](http://oliverjash.me/2012/09/07/methods-for-modifying-objects-in-oocss.html)
 
     %placeholder {
-      // avoid nesting child rules at all cost...
+      // avoid nesting .child rules at all cost...
     }
     
     .MyModule--modifier {
