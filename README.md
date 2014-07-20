@@ -45,7 +45,7 @@ This tool does not exist, but it would be cool if it did.
 
 # Semantics
 
-When choosing names, ignore function, and concentrate on style. Just because we have a section on our website named *music* doesn't meen that we should name our module `MusicCard`. Name it `Card` instead. But if we need a modifier for a green-tinted card in the section we're currently working one (which happens to be the music section) name it `Card--greenTint`. If it truly is specific to that section then `Card--music` is OK as well.
+**When choosing class names, ignore function, and concentrate on style.** Just because we have a section on our website named *music* doesn't meen that we should name our module `MusicCard`. Name it `Card` instead. But if we need a modifier for a green-tinted card in the section we're currently working on (which happens to be the music section) name it `Card--tintedAndSlanted`. If it truly is specific to that section then `Card--music` is OK if nothing else comes to mind.
 
 There is a lot of seemingly conflicting information about CSS semantics. Some people say to name your class by function like this:
 
