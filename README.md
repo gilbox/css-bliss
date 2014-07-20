@@ -135,7 +135,7 @@ I don't like how it negatively effects readability, but if we need to namespace,
 
 [[ pen ]](http://codepen.io/gilbox/pen/fwBhe?editors=010)
 
-We will inevitably want to nest modules inside of modules. There are [various ways](http://stackoverflow.com/questions/24724929/smacss-and-bem-how-to-position-module-inside-of-a-module) that we could possibly position one module inside of another. In most cases we should **subclass the child module with an *Element* class in the parent module**. For example:
+We will inevitably want to nest modules inside of modules. There are [various ways](http://stackoverflow.com/questions/24724929/smacss-and-bem-how-to-position-module-inside-of-a-module) that we could possibly position one module inside of another. In most cases we should **subclass the child module with an *Element* class in the parent module**. For example, here we subclass `.Btn` with `.PopupDialog-closeBtn`:
 
 ### SCSS
 
