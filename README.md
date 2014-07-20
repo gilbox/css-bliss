@@ -8,7 +8,7 @@ My futuristic thoughts on structuring a SASS project. Ideas all stolen from BEM,
 - Use class selectors instead of element or attr selectors in most cases.
 - SASS gives us too much power. In part the purpose of this guide is to restrict our use of that power.
 - Try to avoid nesting, except as described in the DRY section.
-- When in doubt, create a new module instead of bloating an existing module
+- **Keep modules small**. When in doubt, create a new module instead of bloating an existing module
 - A class name will never have more than 3 dashes, ie: `.MyModule-myElement--myModifier`
 
 # Naming
