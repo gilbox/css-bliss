@@ -8,6 +8,7 @@ My futuristic thoughts on structuring a SASS project. Ideas all stolen from BEM,
 - Use class selectors instead of element or attr selectors in most cases.
 - SASS gives you too much power. In part the purpose of this guide is to restrict your use of that power.
 - Try to avoid nesting, except as described in the DRY section.
+- When in doubt, create a new module instead of bloating an existing module
 
 # Naming
 
@@ -34,6 +35,10 @@ Title-case modules, camel-case elements. why-not-dashes ? Because cased names ar
         ...
     }
     
+# Semantics
+
+When choosing names, ignore function, concentrate on style. Just because we have a section on our website named *music* doesn't meen that we should name our module `MusicCard`. Name it `Card` instead. But if we need a modifier for a green-tinted card in the section we're currently working one (which happens to be the music section) name it `Card--greenTint`. If it truly is specific to that section then `Card--music` is OK as well.
+
 # Using @extend
     
 Keep `%placeholders` flat, [here's why](http://oliverjash.me/2012/09/07/methods-for-modifying-objects-in-oocss.html). Furthermore, don't try to use @extend just to avoid adding multiple classes to an element in your markup.
