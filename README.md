@@ -74,9 +74,12 @@ I don't like how it negatively effects readability, but if one needs to namespac
 ## Module
 
 - No margin
+- No top, left, right, bottom
 - 100% width
 
 ## Module Modifier
+
+- Could possibly define margin, top, left, right, or bottom but should probably be avoided in most cases.
 
 ## Element
 
