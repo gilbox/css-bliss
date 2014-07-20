@@ -152,6 +152,5 @@ I don't like how it negatively effects readability, but if we need to namespace,
 
 ## .plainJaneRules
 
-These rules should be completely flat. They include [utility classes](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md#u-utilityName) and [layout rules](http://smacss.com/book/type-layout).
+These rules should be completely flat. They include what are often called [utility classes](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md#u-utilityName) and [layout rules](http://smacss.com/book/type-layout).
 
-How do you tell them apart? Do a full-text search. Why so flippant? Because I'm not sure that we really need all that `u-` and `l-` prefix stuff.
