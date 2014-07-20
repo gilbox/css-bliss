@@ -88,9 +88,30 @@ I'm not entirely sure this is a good idea, but here goes:
       }
     }
     
-Downside is that doing a full-text search for a class won't take you where you need to go, but if the naming convention is well-established you'll have that in mind when searching anyway.
+It starts to get hairy with module modifiers:
 
-**Update**: I don't like this because it doesn't work for module modifiers. Subject to change.
+    .MyModule--myModifier {
+       .MyModule {
+          &-myElement {
+            ...
+          }
+          
+          &-myOtherElement {
+            ...
+            &--myModifier {
+              ...
+            }
+            
+            &--anotherModifier {
+              ...
+            }
+          }
+        }
+    }
+    
+    
+Another downside is that doing a full-text search for a class won't take you where you need to go, but if the naming convention is well-established you'll have that in mind when searching anyway.
+
 
 # Namespacing
 
