@@ -143,6 +143,7 @@ I don't like how it negatively effects readability, but if we need to namespace,
 - `--camelCase`
 - Each modifier has an associated Element ie: `.MyModule-myElement--myModifier`
 - Should **not** be effected by another other element except for its own. Ie., the module can be nested inside of any other module and it should not effect the appearance of the modifier.
+- **Todo**: Do we really need element modifiers, or should we rely on module modifiers instead ?
 
 ## State
 
