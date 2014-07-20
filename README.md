@@ -35,6 +35,13 @@ Title-case modules, camel-case elements. why-not-dashes ? Because cased names ar
         ...
     }
     
+# Linter
+
+This tool does not exist, but it would be cool if it did.
+
+- Confirm proper naming
+- Enforce flat `@extend`s
+
 # Semantics
 
 When choosing names, ignore function, concentrate on style. Just because we have a section on our website named *music* doesn't meen that we should name our module `MusicCard`. Name it `Card` instead. But if we need a modifier for a green-tinted card in the section we're currently working one (which happens to be the music section) name it `Card--greenTint`. If it truly is specific to that section then `Card--music` is OK as well.
