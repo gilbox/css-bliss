@@ -5,7 +5,7 @@ My futuristic thoughts on structuring a SASS project. Ideas all stolen from BEM,
 
 # Naming
 
-Title-case modules, camel-case elements. why-not-dashes ? Because cased names are more readable (very objective explanation, I know). Furthermore, now if you see a class name that doesntStartWithTitleCase you know that it's not a module. What?!? not everything is a module? To be determined...
+Title-case modules, camel-case elements. why-not-dashes ? Because cased names are more readable (very objective explanation, I know). Furthermore, now if you see a class name that doesntStartWithTitleCase you know that it's not a module. (What?!? not everything is a module?)
 
     .MyModule {
       .MyModule-myElement {
@@ -46,3 +46,9 @@ I'm not entirely sure this is a good idea, but here goes:
     }
     
 Downside is that doing a full-text search for a class won't take you where you need to go, but if the naming convention is well-established you'll have that in mind when searching anyway.
+
+# .planeJaneClass rules
+
+These rules should be mostly or completely flat. They include [utility classes](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md#u-utilityName) and [layout rules](http://smacss.com/book/type-layout).
+
+How do you tell them apart? Do a full-text search. Why so flippant? Because I'm not sure that we really need all that `u-` and `l-` prefix stuff.
