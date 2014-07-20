@@ -63,7 +63,7 @@ Keep `%placeholders` flat, [here's why](http://oliverjash.me/2012/09/07/methods-
       // don't use @extend .MyModule here for reason stated above
     }
 
-Based on the above, do **not** structure `@extend`s the way we structure modules. Don't think of `@extend`s as if they are modules. They should be small pieces of reusable styling, and [they should do one thing and do it well](http://en.wikipedia.org/wiki/Single_responsibility_principle).
+Do **not** structure `@extend`s the way we structure modules. Don't think of `@extend`s as if they are modules. They should be small pieces of reusable styling, and [they should do one thing and do it well](http://en.wikipedia.org/wiki/Single_responsibility_principle).
 
 **Todo**: establish a naming convention for `@extend`s ?
 
