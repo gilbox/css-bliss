@@ -51,7 +51,7 @@ When choosing names, ignore function, concentrate on style. Just because we have
 
 Above each module, describe the purpose of the module, as well as it's scope. Be restrictive and specific so that when someone else looks at it and needs to add some styling, they will know if they should add-on to the module or create a new one.
 
-# Using @extend
+# Using `%placeholder` and `@extend`
     
 Keep `%placeholders` flat, [here's why](http://oliverjash.me/2012/09/07/methods-for-modifying-objects-in-oocss.html). Furthermore, don't try to use @extend just to avoid adding multiple classes to an element in our markup.
 
@@ -63,7 +63,7 @@ Keep `%placeholders` flat, [here's why](http://oliverjash.me/2012/09/07/methods-
       // don't use @extend .MyModule here for reason stated above
     }
 
-Based on the above, do **not** structure `@extend`s the way we structure modules. Don't think of `@extend`s as if they are modules. They should be small pieces of reusable styling, and they should be used sparingly.
+Based on the above, do **not** structure `@extend`s the way we structure modules. Don't think of `@extend`s as if they are modules. They should be small pieces of reusable styling, and [they should do one thing and do it well](http://en.wikipedia.org/wiki/Single_responsibility_principle).
 
 **Todo**: establish a naming convention for `@extend`s ?
 
