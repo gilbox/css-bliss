@@ -3,6 +3,10 @@ futuristic-sass-guide
 
 My futuristic thoughts on structuring a SASS project. Ideas all stolen from BEM, SMACSS, OOCSS, SUITECSS
 
+# General
+
+- Use class selectors instead of element or attr selectors in most cases
+
 # Naming
 
 Title-case modules, camel-case elements. why-not-dashes ? Because cased names are more readable (very objective explanation, I know). Furthermore, now if you see a class name that doesntStartWithTitleCase you know that it's not a module. (What?!? not everything is a module?)
@@ -20,13 +24,17 @@ Title-case modules, camel-case elements. why-not-dashes ? Because cased names ar
       ...
     }
     
-    MyModule.is-state {
+    .MyModule.is-state {
       ...
+    }
+    
+    .myPlainJaneRule {
+        ...
     }
     
 # Using @extend
     
-Keep `%placeholders` flat, [here's why](http://oliverjash.me/2012/09/07/methods-for-modifying-objects-in-oocss.html)
+Keep `%placeholders` flat, [here's why](http://oliverjash.me/2012/09/07/methods-for-modifying-objects-in-oocss.html). Furthermore, don't try to use @extend just to avoid adding multiple classes to an element in your markup.
 
     %placeholder {
       // avoid nesting .child rules at all cost...
