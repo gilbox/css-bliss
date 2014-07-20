@@ -9,6 +9,7 @@ My futuristic thoughts on structuring a SASS project. Ideas all stolen from BEM,
 - SASS gives you too much power. In part the purpose of this guide is to restrict your use of that power.
 - Try to avoid nesting, except as described in the DRY section.
 - When in doubt, create a new module instead of bloating an existing module
+- A class name will never have more than 3 dashes, ie: `.MyModule-myElement--myModifier`
 
 # Naming
 
@@ -88,6 +89,8 @@ I'm not entirely sure this is a good idea, but here goes:
     }
     
 Downside is that doing a full-text search for a class won't take you where you need to go, but if the naming convention is well-established you'll have that in mind when searching anyway.
+
+**Update**: I don't like this because it doesn't work for module modifiers. Subject to change.
 
 # Namespacing
 
