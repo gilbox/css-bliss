@@ -72,6 +72,7 @@ Based on the above, do **not** structure `@extend`s the way you structure module
 I'm not entirely sure this is a good idea, but here goes:
 
     .MyModule {
+      ...
       &-myElement {
         ...
       }
@@ -92,16 +93,9 @@ It starts to get hairy with module modifiers:
 
     .MyModule--myModifier {
        .MyModule {
-          &-myElement {
-            ...
-          }
-          
+          ...
           &-myOtherElement {
             ...
-            &--myModifier {
-              ...
-            }
-            
             &--anotherModifier {
               ...
             }
