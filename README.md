@@ -69,7 +69,7 @@ Based on the above, do **not** structure `@extend`s the way we structure modules
 
 # DRY
 
-[[plunk]](http://codepen.io/gilbox/pen/adAtp?editors=010)
+[[pen]](http://codepen.io/gilbox/pen/adAtp?editors=010)
 
 I'm not entirely sure this is a good idea, but here goes: 
 
