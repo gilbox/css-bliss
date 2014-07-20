@@ -52,7 +52,7 @@ Keep `%placeholders` flat, [here's why](http://oliverjash.me/2012/09/07/methods-
     }
     
     .MyModule--modifier {
-      // probably shouldn't use @extend .MyModule here for reason stated above
+      // don't use @extend .MyModule here for reason stated above
     }
 
 # DRY
