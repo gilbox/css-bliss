@@ -20,6 +20,10 @@ Title-case modules, camel-case elements. why-not-dashes ? Because cased names ar
       ...
     }
     
+    MyModule.is-state {
+      ...
+    }
+    
 # Using @extend
     
 Keep `%placeholders` flat, [here's why](http://oliverjash.me/2012/09/07/methods-for-modifying-objects-in-oocss.html)
@@ -73,9 +77,11 @@ I don't like how it negatively effects readability, but if one needs to namespac
 
 ## Module
 
+- `TitleCase`
 - No margin
 - No top, left, right, bottom
 - 100% width
+- Self-contained
 
 ## Module Modifier
 
@@ -83,6 +89,22 @@ I don't like how it negatively effects readability, but if one needs to namespac
 
 ## Element
 
+- `-camelCase`
+- Each element has an associated module ie: MyModule-myElement
+- Should **not** be effected by any module except for it's own. Ie., the module can be nested inside of any other module and it should not effect the appearance of the element.
+
 ## Element Modifier
 
+- `--camelCase`
+- Each modifier has an associated Element ie: MyModule-myElement--myModifier
+- Should **not** be effected by another other element except for its own. Ie., the module can be nested inside of any other module and it should not effect the appearance of the modifier.
+
 ## .plainJaneRules
+
+- Should be flat (might be some flexibility for layout rules)
+
+## State
+
+- `is-camelCased`
+- Used in conjunction with JavaScript
+- **No** style except when attached to another rule. Ie., should only have style when attached to `MyModule.is-state`, `MyModule-myElement.is-state`, `MyModule-myElement--myModifier.is-state`, `.is-state MyModule-myElement`, etc.
