@@ -102,7 +102,7 @@ I don't like how it negatively effects readability, but if one needs to namespac
 
 ## Module
 
-- `TitleCase`
+- `.TitleCase`
 - No margin
 - No top, left, right, bottom
 - 100% width
@@ -116,20 +116,20 @@ I don't like how it negatively effects readability, but if one needs to namespac
 ## Element
 
 - `-camelCase`
-- Each element has an associated module ie: `MyModule-myElement`
+- Each element has an associated module ie: `.MyModule-myElement`
 - Should **not** be effected by any module except for it's own. Ie., the module can be nested inside of any other module and it should not effect the appearance of the element.
 
 ## Element Modifier
 
 - `--camelCase`
-- Each modifier has an associated Element ie: `MyModule-myElement--myModifier`
+- Each modifier has an associated Element ie: `.MyModule-myElement--myModifier`
 - Should **not** be effected by another other element except for its own. Ie., the module can be nested inside of any other module and it should not effect the appearance of the modifier.
 
 ## State
 
-- `is-camelCase`
+- `.is-camelCase`
 - Used in conjunction with JavaScript
-- **No** style except in context with another rule. For example: `MyModule.is-state`, `MyModule-myElement.is-state`, `MyModule-myElement--myModifier.is-state`, `.is-state MyModule-myElement`, etc.
+- **No** style except in context with another rule. For example: `.MyModule.is-state`, `.MyModule-myElement.is-state`, `.MyModule-myElement--myModifier.is-state`, `.is-state .MyModule-myElement`, etc.
 
 ## .plainJaneRules
 
