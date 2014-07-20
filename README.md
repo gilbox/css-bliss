@@ -63,21 +63,18 @@ How do you tell them apart? Do a full-text search. Why so flippant? Because I'm 
 
 # Namespacing
 
-I don't like how it negatively effects readability, but if one needs to namespace it could be done like so:
+I don't like how it negatively effects readability, but if one needs to namespace, prepend a lowercase two or three letter abbreviation.
 
-    .ns {
-      @import 'MyModule'
-      @import 'AnotherModule'
-    }
-    
-    // MyModule.scss:
-    &-MyModule {
+    .ns-MyModule {
       ...
     }
 
 # Building Blocks
 
 ## Module
+
+- No margin
+- 100% width
 
 ## Module Modifier
 
