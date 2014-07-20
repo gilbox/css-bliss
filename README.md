@@ -12,7 +12,7 @@ My futuristic thoughts on structuring a SASS project. Ideas all stolen from BEM,
 
 # Naming
 
-Title-case modules, camel-case elements. why-not-dashes ? Because cased names are more readable (very objective explanation, I know). Furthermore, now if you see a class name that doesntStartWithTitleCase you know that it's not a module. (What?!? not everything is a module?)
+Title-case modules, camel-case elements. why-not-dashes ? Because cased names are more readable (very objective explanation, I know). Furthermore, if you see a class name that doesntStartWithTitleCase you know that it's not a module. (What?!? not everything is a module?)
 
     .MyModule {
       .MyModule-myElement {
