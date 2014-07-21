@@ -64,23 +64,25 @@ What about our Jasmine unit tests which are heavy with jQuery selectors? If clas
 
 Above each module, describe the purpose of the module, as well as it's scope. Be restrictive and specific so that when someone else looks at it and needs to add some styling, they will know if they should add-on to the module or create a new one.
 
-# Using `%placeholder` and `@extend`
+# `%placeholder`
 
 [[ pen ]](http://codepen.io/gilbox/pen/zpIxf?editors=010)
 
-Keep `%placeholders` flat, [here's why](http://oliverjash.me/2012/09/07/methods-for-modifying-objects-in-oocss.html). Furthermore, don't try to use @extend just to avoid adding multiple classes to an element in our markup.
+Keep `%placeholders` flat, [here's why](http://oliverjash.me/2012/09/07/methods-for-modifying-objects-in-oocss.html).
 
     %placeholder {
       // avoid nesting .child rules at all cost...
     }
-    
-    .MyModule--modifier {
-      // don't use @extend .MyModule here for reason stated above
-    }
 
-Do **not** structure `@extend`s the way we structure modules. Don't think of `@extend`s as if they are modules. They should be small pieces of reusable styling, and [they should do one thing and do it well](http://en.wikipedia.org/wiki/Single_responsibility_principle).
+`%placeholder`s should be small pieces of reusable styling, and [they should do one thing and do it well](http://en.wikipedia.org/wiki/Single_responsibility_principle).
 
 **Todo**: establish a naming convention for `@extend`s ?
+
+# `@extend`
+
+**If we keep Modules flat** by strictly following the structure laid out in this guide, then **we can use `@extend` to create module modifiers** without unnecessary class selectors in the compiled CSS code.
+
+Selectively using `@extend` with module modifiers in some cases and not in others might not be such a bad thing **if we only ever `@extend` the base module class**. Whenever we see a module modifier class without a superclass, we can safely assume that it's been extended, and because of modifier naming convention we know exactly which module it `@extend`s.
 
 # DRY
 
