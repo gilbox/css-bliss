@@ -82,7 +82,7 @@ Keep `%placeholders` flat, [here's why](http://oliverjash.me/2012/09/07/methods-
 
 **If we keep Modules flat** by strictly following the structure laid out in this guide, then **we can use `@extend` to create module modifiers** without unnecessary class selectors in the compiled CSS code.
 
-Selectively using `@extend` with module modifiers in some cases and not in others might not be such a bad thing **if we only ever `@extend` the base module class**. Whenever we see a module modifier class without a superclass, we can safely assume that it's been extended, and because of modifier naming convention we know exactly which module it `@extend`s.
+Selectively using `@extend` with module modifiers in some cases and not in others might not be such a bad thing **so long as we only ever `@extend` the base module class**. Whenever we see a module modifier class without a superclass, we can safely assume that it's been extended, and because of modifier naming convention we know exactly which module it `@extend`s.
 
 # DRY
 
