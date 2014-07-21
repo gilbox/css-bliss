@@ -66,8 +66,6 @@ Above each module, describe the purpose of the module, as well as it's scope. Be
 
 # `%placeholder`
 
-[[ pen ]](http://codepen.io/gilbox/pen/zpIxf?editors=010)
-
 Keep `%placeholders` flat, [here's why](http://oliverjash.me/2012/09/07/methods-for-modifying-objects-in-oocss.html).
 
     %placeholder {
@@ -79,6 +77,8 @@ Keep `%placeholders` flat, [here's why](http://oliverjash.me/2012/09/07/methods-
 **Todo**: establish a naming convention for `@extend`s ?
 
 # `@extend`
+
+[[ pen ]](http://codepen.io/gilbox/pen/zpIxf?editors=010)
 
 **If we keep Modules flat** by strictly following the structure laid out in this guide, then **we can use `@extend` to create module modifiers** without unnecessary class selectors in the compiled CSS code.
 
