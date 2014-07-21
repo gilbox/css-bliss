@@ -65,7 +65,9 @@ What about our Jasmine unit tests which are heavy with jQuery selectors? If clas
 Above each module, describe the purpose of the module, as well as it's scope. Be restrictive and specific so that when someone else looks at it and needs to add some styling, they will know if they should add-on to the module or create a new one.
 
 # Using `%placeholder` and `@extend`
-    
+
+[[ pen ]](http://codepen.io/gilbox/pen/zpIxf?editors=010)
+
 Keep `%placeholders` flat, [here's why](http://oliverjash.me/2012/09/07/methods-for-modifying-objects-in-oocss.html). Furthermore, don't try to use @extend just to avoid adding multiple classes to an element in our markup.
 
     %placeholder {
