@@ -58,7 +58,7 @@ instead of
     
 However, we favor the second approach. Using the `.FacebookBtn` class name is convenient when you're using a library like jQuery because it keeps your JavaScript code semantically currect. However, with HTML5 and modern frameworks like angularjs the markup is already semantically correct via the use of custom element naming, attributes, and event handlers which declaratively describe the content and its function.
 
-What about our Jasmine unit tests which are heavy with jQuery selectors? If class names are *un-semantic* does that force us to write unit tests that break when simple stylistic changes are made to the interface? The solution to this is to favor the use of attribute and element selectors in our unit tests which generally means the tests will only break when functionality changes.
+What about our Jasmine unit tests which are heavy with jQuery selectors? If class names are *un-semantic* does that force us to write unit tests that break when simple stylistic changes are made to the interface? Not if we favor the use of attribute and element selectors in our unit tests which generally means the tests will only break when functionality changes.
 
 # Comments
 
