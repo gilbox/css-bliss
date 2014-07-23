@@ -3,17 +3,17 @@ futuristic-sass-guide
 
 My futuristic thoughts on structuring a SASS project. Ideas all stolen from BEM, SMACSS, OOCSS, SUITECSS.
 
-- [General](general)
-- [Naming](naming)
-- [Building Blocks](building-blocks)
-- [Semantics](semantics)
-- [Comments](comments)
-- [%placeholder](placeholder)
-- [@extend](extend)
-- [DRY](dry)
-- [Positioning a Module inside of a Module](positioning-a-module-inside-of-a-module)
-- [Namespacing](namespacing)
-- [Linter](linter)
+- [General](#general)
+- [Naming](#naming)
+- [Building Blocks](#building-blocks)
+- [Semantics](#semantics)
+- [Comments](#comments)
+- [%placeholder](#placeholder)
+- [@extend](#extend)
+- [DRY](#dry)
+- [Positioning a Module inside of a Module](#positioning-a-module-inside-of-a-module)
+- [Namespacing](#namespacing)
+- [Linter](#linter)
 
 # General
 
