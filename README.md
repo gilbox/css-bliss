@@ -3,6 +3,18 @@ futuristic-sass-guide
 
 My futuristic thoughts on structuring a SASS project. Ideas all stolen from BEM, SMACSS, OOCSS, SUITECSS.
 
+- [General](general)
+- [Naming](naming)
+- [Building Blocks](building-blocks)
+- [Semantics](semantics)
+- [Comments](comments)
+- [%placeholder](placeholder)
+- [@extend](extend)
+- [DRY](dry)
+- [Positioning a Module inside of a Module](positioning-a-module-inside-of-a-module)
+- [Namespacing](namespacing)
+- [Linter](linter)
+
 # General
 
 - Use class selectors instead of element or attr selectors in most cases.
@@ -37,13 +49,49 @@ Title-case modules, camel-case elements. why-not-dashes ? Because cased names ar
         ...
     }
     
-# Linter
 
-This tool does not exist, but it would be cool if it did.
+# Building Blocks
 
-- Confirm proper naming
-- Enforce flat `@extend`s
+## Module
 
+- `.TitleCase`
+- Self-contained
+- Most modules should not set their own width, margin, and positioning. By authoring a module to be full-width or inline, it can better adapt to the dimensions of an ancestral context. [(source)](https://github.com/suitcss/suit/blob/master/doc/components.md#adapting-to-ancestral-context)
+    - No margin
+    - No top, left, right, bottom
+    - 100% width, or auto width
+
+## Module Modifier
+
+- `--camelCase`
+- Could possibly define margin, top, left, right, or bottom but should probably be avoided in most cases.
+- Subclasses, or `@extend`s a module
+
+## Element
+
+- `-camelCase`
+- Each element has an associated module ie: `.MyModule-myElement`
+- Should **not** be effected by any module except for it's own. Ie., the module can be nested inside of any other module and it should not effect the appearance of the element.
+
+## Element Modifier
+
+- `--camelCase`
+- Each modifier has an associated Element ie: `.MyModule-myElement--myModifier`
+- Should **not** be effected by another other element except for its own. Ie., the module can be nested inside of any other module and it should not effect the appearance of the modifier.
+- Subclasses an element
+- **Todo**: Do we really need element modifiers, or should we rely on module modifiers instead ?
+
+## State
+
+- `.is-camelCase`
+- Used in conjunction with JavaScript
+- **No** style except in context with another rule. For example: `.MyModule.is-state`, `.MyModule-myElement.is-state`, `.MyModule-myElement--myModifier.is-state`, `.is-state .MyModule-myElement`, etc.
+
+## .plainJaneRules
+
+These rules should be completely flat. They include what are often called [utility classes](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md#u-utilityName) and [layout rules](http://smacss.com/book/type-layout).
+
+    
 # Semantics
 
 **When choosing class names, ignore function, and concentrate on style.** Just because we have a section on our website named *music* doesn't meen that we should name our module `MusicCard`. Name it `Card` instead. But if we need a modifier for a green-tinted card in the section we're currently working on (which happens to be the music section) name it `Card--greenTint`. If it truly is specific to that section then `Card--music` is OK if nothing else comes to mind.
@@ -128,15 +176,6 @@ A downside is that doing a full-text search for a class won't take us where we n
 This DRY approach prevents `@extend`ing *elements* and *element modifiers*. This is good because `@extend`ing these nested classes creates confusing and difficult to maintain code.
 
 
-# Namespacing
-
-I don't like how it negatively effects readability, but if we need to namespace, prepend a lowercase two or three letter abbreviation.
-
-    .ns-MyModule {
-      ...
-    }
-
-
 # Positioning a Module inside of a Module
 
 [[ pen ]](http://codepen.io/gilbox/pen/fwBhe?editors=010)
@@ -162,45 +201,20 @@ We will inevitably want to nest modules inside of modules. There are [various wa
     </div>
 
 
+# Namespacing
 
-# Building Blocks
+I don't like how it negatively effects readability, but if we need to namespace, prepend a lowercase two or three letter abbreviation.
 
-## Module
+    .ns-MyModule {
+      ...
+    }
+    
+# Linter
 
-- `.TitleCase`
-- Self-contained
-- Most modules should not set their own width, margin, and positioning. By authoring a module to be full-width or inline, it can better adapt to the dimensions of an ancestral context. [(source)](https://github.com/suitcss/suit/blob/master/doc/components.md#adapting-to-ancestral-context)
-    - No margin
-    - No top, left, right, bottom
-    - 100% width, or auto width
+This tool does not exist, but it would be cool if it did.
 
-## Module Modifier
+- Confirm proper naming
+- Enforce flat `@extend`s
 
-- `--camelCase`
-- Could possibly define margin, top, left, right, or bottom but should probably be avoided in most cases.
-- Subclasses, or `@extend`s a module
 
-## Element
-
-- `-camelCase`
-- Each element has an associated module ie: `.MyModule-myElement`
-- Should **not** be effected by any module except for it's own. Ie., the module can be nested inside of any other module and it should not effect the appearance of the element.
-
-## Element Modifier
-
-- `--camelCase`
-- Each modifier has an associated Element ie: `.MyModule-myElement--myModifier`
-- Should **not** be effected by another other element except for its own. Ie., the module can be nested inside of any other module and it should not effect the appearance of the modifier.
-- Subclasses an element
-- **Todo**: Do we really need element modifiers, or should we rely on module modifiers instead ?
-
-## State
-
-- `.is-camelCase`
-- Used in conjunction with JavaScript
-- **No** style except in context with another rule. For example: `.MyModule.is-state`, `.MyModule-myElement.is-state`, `.MyModule-myElement--myModifier.is-state`, `.is-state .MyModule-myElement`, etc.
-
-## .plainJaneRules
-
-These rules should be completely flat. They include what are often called [utility classes](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md#u-utilityName) and [layout rules](http://smacss.com/book/type-layout).
 
