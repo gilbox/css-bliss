@@ -20,13 +20,13 @@ My futuristic thoughts on structuring a SASS project. Ideas all stolen from BEM,
 - Use class selectors instead of element or attr selectors in most cases.
 - SASS gives us too much power. In part the purpose of this guide is to restrict our use of that power.
 - Try to avoid nesting, except as described in the DRY section.
-- **Keep modules small**. When in doubt, create a new module instead of bloating an existing module
+- **Keep [Modules](#module) small**. When in doubt, create a new [Module](#module) instead of bloating an existing [Module](#module).
 - A class name will never have more than 3 dashes, ie: `.MyModule-myElement--myModifier`
 - Be sure to click the `[ pen ]` links as you encounter them below.
 
 # Naming
 
-Title-case modules, camel-case elements. why-not-dashes ? Because cased names are more readable (very objective explanation, I know). Furthermore, if we see a class name that doesntStartWithTitleCase we know that it's not a module.
+Title-case [Modules](#module), camel-case [Elements](#element). why-not-dashes ? Because cased names are more readable (very objective explanation, I know). Furthermore, if we see a class name that doesntStartWithTitleCase we know that it's not a module.
 
     .MyModule {
       .MyModule-myElement {
@@ -57,7 +57,7 @@ Title-case modules, camel-case elements. why-not-dashes ? Because cased names ar
 - `.TitleCase`
 - Self-contained
 - Can be `@extend`ed to create [Module Modifiers](#module-modifier)
-- Most modules should not set their own width, margin, and positioning. By authoring a module to be full-width or inline, it can better adapt to the dimensions of an ancestral context. [(source)](https://github.com/suitcss/suit/blob/master/doc/components.md#adapting-to-ancestral-context)
+- Most Modules should not set their own width, margin, and positioning. By authoring a module to be full-width or inline, it can better adapt to the dimensions of an ancestral context. [(source)](https://github.com/suitcss/suit/blob/master/doc/components.md#adapting-to-ancestral-context)
     - No margin
     - No top, left, right, bottom
     - 100% width, or auto width
@@ -79,7 +79,7 @@ Title-case modules, camel-case elements. why-not-dashes ? Because cased names ar
 
 - `--camelCase`
 - Each modifier has an associated [Element](#element) ie: `.MyModule-myElement--myModifier`
-- Should **not** be effected by another other Element except for its own. Ie., the Module can be nested inside of any other Module and it should not effect the appearance of the modifier.
+- Should **not** be effected by another other [Element](#element) except for its own. Ie., the [Module](#module) can be nested inside of any other [Module](#module) and it should not effect the appearance of the modifier.
 - Subclasses an [Element](#element)
 
 ## State
@@ -181,7 +181,7 @@ This DRY approach prevents `@extend`ing [*Elements*](#element) and [*Element Mod
 
 [[ pen ]](http://codepen.io/gilbox/pen/fwBhe?editors=010)
 
-We will inevitably want to nest [Modules](#module) inside of modules. There are [various ways](http://stackoverflow.com/questions/24724929/smacss-and-bem-how-to-position-module-inside-of-a-module) that we could possibly position one module inside of another. In most cases we should **subclass the child module with an *Element* class in the parent module**. For example, here we subclass `.Btn` with `.PopupDialog-closeBtn`:
+We will inevitably want to nest [Modules](#module) inside of modules. There are [various ways](http://stackoverflow.com/questions/24724929/smacss-and-bem-how-to-position-module-inside-of-a-module) that we could possibly position one [Module](#module) inside of another. In most cases we should **subclass the child [Module](#module) with an [*Element*](#element) class in the parent [Module](#module)**. For example, here we subclass `.Btn` with `.PopupDialog-closeBtn`:
 
 ### SCSS
 
