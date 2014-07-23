@@ -46,7 +46,7 @@ This tool does not exist, but it would be cool if it did.
 
 # Semantics
 
-**When choosing class names, ignore function, and concentrate on style.** Just because we have a section on our website named *music* doesn't meen that we should name our module `MusicCard`. Name it `Card` instead. But if we need a modifier for a green-tinted card in the section we're currently working on (which happens to be the music section) name it `Card--tintedAndSlanted`. If it truly is specific to that section then `Card--music` is OK if nothing else comes to mind.
+**When choosing class names, ignore function, and concentrate on style.** Just because we have a section on our website named *music* doesn't meen that we should name our module `MusicCard`. Name it `Card` instead. But if we need a modifier for a green-tinted card in the section we're currently working on (which happens to be the music section) name it `Card--greenTint`. If it truly is specific to that section then `Card--music` is OK if nothing else comes to mind.
 
 There is a lot of seemingly conflicting information about CSS semantics. Some people say to name your class by function like this:
 
@@ -64,7 +64,7 @@ What about our Jasmine unit tests which are heavy with jQuery selectors? If clas
 
 Above each module, describe the purpose of the module, as well as it's scope. Be restrictive and specific so that when someone else looks at it and needs to add some styling, they will know if they should add-on to the module or create a new one.
 
-# `%placeholder`
+# %placeholder
 
 Keep `%placeholders` flat, [here's why](http://oliverjash.me/2012/09/07/methods-for-modifying-objects-in-oocss.html).
 
@@ -76,7 +76,7 @@ Keep `%placeholders` flat, [here's why](http://oliverjash.me/2012/09/07/methods-
 
 **Todo**: establish a naming convention for `@extend`s ?
 
-# `@extend`
+# @extend
 
 [[ pen ]](http://codepen.io/gilbox/pen/zpIxf?editors=010)
 
@@ -124,6 +124,8 @@ and module modifiers:
     
     
 A downside is that doing a full-text search for a class won't take us where we need to go, but if the naming convention is well-established we'll have that in mind when searching anyway. Also, is this code more or less readable than the verbose version?
+
+This DRY approach prevents `@extend`ing *elements* and *element modifiers*. This is good because `@extend`ing these nested classes creates confusing and difficult to maintain code.
 
 
 # Namespacing
