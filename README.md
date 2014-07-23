@@ -56,6 +56,7 @@ Title-case modules, camel-case elements. why-not-dashes ? Because cased names ar
 
 - `.TitleCase`
 - Self-contained
+- Can be `@extend`ed to create [Module Modifiers](#module-modifier)
 - Most modules should not set their own width, margin, and positioning. By authoring a module to be full-width or inline, it can better adapt to the dimensions of an ancestral context. [(source)](https://github.com/suitcss/suit/blob/master/doc/components.md#adapting-to-ancestral-context)
     - No margin
     - No top, left, right, bottom
@@ -65,21 +66,21 @@ Title-case modules, camel-case elements. why-not-dashes ? Because cased names ar
 
 - `--camelCase`
 - Could possibly define margin, top, left, right, or bottom but should probably be avoided in most cases.
-- Subclasses, or `@extend`s a module
+- Subclasses, or `@extend`s a Module
+- Do not `@extend` a Module Modifier to create another Module Modifier
 
 ## Element
 
 - `-camelCase`
 - Each element has an associated module ie: `.MyModule-myElement`
-- Should **not** be effected by any module except for it's own. Ie., the module can be nested inside of any other module and it should not effect the appearance of the element.
+- Should **not** be effected by any [Module](#module) except for it's own. Ie., the Module can be nested inside of any other Module and it should not effect the appearance of the element.
 
 ## Element Modifier
 
 - `--camelCase`
-- Each modifier has an associated Element ie: `.MyModule-myElement--myModifier`
-- Should **not** be effected by another other element except for its own. Ie., the module can be nested inside of any other module and it should not effect the appearance of the modifier.
-- Subclasses an element
-- **Todo**: Do we really need element modifiers, or should we rely on module modifiers instead ?
+- Each modifier has an associated [Element](#element) ie: `.MyModule-myElement--myModifier`
+- Should **not** be effected by another other Element except for its own. Ie., the Module can be nested inside of any other Module and it should not effect the appearance of the modifier.
+- Subclasses an [Element](#element)
 
 ## State
 
@@ -94,7 +95,7 @@ These rules should be completely flat. They include what are often called [utili
     
 # Semantics
 
-**When choosing class names, ignore function, and concentrate on style.** Just because we have a section on our website named *music* doesn't meen that we should name our module `MusicCard`. Name it `Card` instead. But if we need a modifier for a green-tinted card in the section we're currently working on (which happens to be the music section) name it `Card--greenTint`. If it truly is specific to that section then `Card--music` is OK if nothing else comes to mind.
+**When choosing class names, ignore function, and concentrate on style.** Just because we have a section on our website named *music* doesn't meen that we should name our [Module](#module) `MusicCard`. Name it `Card` instead. But if we need a [modifier](#module-modifier) for a green-tinted card in the section we're currently working on (which happens to be the music section) name it `Card--greenTint`. If it truly is specific to that section then `Card--music` is OK if nothing else comes to mind.
 
 There is a lot of seemingly conflicting information about CSS semantics. Some people say to name your class by function like this:
 
@@ -110,7 +111,7 @@ What about our Jasmine unit tests which are heavy with jQuery selectors? If clas
 
 # Comments
 
-Above each module, describe the purpose of the module, as well as it's scope. Be restrictive and specific so that when someone else looks at it and needs to add some styling, they will know if they should add-on to the module or create a new one.
+Above each [Module](#module), describe the purpose of the [Module](#module), as well as it's scope. Be restrictive and specific so that when someone else looks at it and needs to add some styling, they will know if they should add-on to the [Module](#module) or create a new one.
 
 # %placeholder
 
@@ -130,7 +131,7 @@ Keep `%placeholders` flat, [here's why](http://oliverjash.me/2012/09/07/methods-
 
 **If we keep Modules flat** by strictly following the structure laid out in this guide, then **we can use `@extend` to create module modifiers** without unnecessary class selectors in the compiled CSS code.
 
-Selectively using `@extend` with module modifiers in some cases and not in others might not be such a bad thing **so long as we only ever `@extend` the base module class**. Whenever we see a module modifier class without a superclass, we can safely assume that it's been extended, and because of modifier naming convention we know exactly which module it `@extend`s.
+Selectively using `@extend` with [Module Modifiers](#module-modifier) in some cases and not in others might not be such a bad thing **so long as we only ever `@extend` the base module class**. Whenever we see a [Module Modifier](#module-modifier) class without a superclass, we can safely assume that it's been extended, and because of modifier naming convention we know exactly which [Module](#module) it `@extend`s.
 
 # DRY
 
@@ -173,14 +174,14 @@ and module modifiers:
     
 A downside is that doing a full-text search for a class won't take us where we need to go, but if the naming convention is well-established we'll have that in mind when searching anyway. Also, is this code more or less readable than the verbose version?
 
-This DRY approach prevents `@extend`ing *elements* and *element modifiers*. This is good because `@extend`ing these nested classes creates confusing and difficult to maintain code.
+This DRY approach prevents `@extend`ing [*Elements*](#element) and [*Element Modifiers*](#element-modifier). This is good because `@extend`ing these nested classes creates confusing and difficult to maintain code.
 
 
 # Positioning a Module inside of a Module
 
 [[ pen ]](http://codepen.io/gilbox/pen/fwBhe?editors=010)
 
-We will inevitably want to nest modules inside of modules. There are [various ways](http://stackoverflow.com/questions/24724929/smacss-and-bem-how-to-position-module-inside-of-a-module) that we could possibly position one module inside of another. In most cases we should **subclass the child module with an *Element* class in the parent module**. For example, here we subclass `.Btn` with `.PopupDialog-closeBtn`:
+We will inevitably want to nest [Modules](#module) inside of modules. There are [various ways](http://stackoverflow.com/questions/24724929/smacss-and-bem-how-to-position-module-inside-of-a-module) that we could possibly position one module inside of another. In most cases we should **subclass the child module with an *Element* class in the parent module**. For example, here we subclass `.Btn` with `.PopupDialog-closeBtn`:
 
 ### SCSS
 
@@ -214,7 +215,7 @@ I don't like how it negatively effects readability, but if we need to namespace,
 This tool does not exist, but it would be cool if it did.
 
 - Confirm proper naming
-- Enforce flat `@extend`s
+- Enforce flat [`@extend`](#extend)s
 
 
 
