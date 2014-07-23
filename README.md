@@ -178,7 +178,7 @@ We will inevitably want to nest modules inside of modules. There are [various wa
 
 - `--camelCase`
 - Could possibly define margin, top, left, right, or bottom but should probably be avoided in most cases.
-- Subclasses a module
+- Subclasses, or `@extend`s a module
 
 ## Element
 
