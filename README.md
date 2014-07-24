@@ -29,16 +29,23 @@ My futuristic thoughts on structuring a SASS project. Ideas all stolen from BEM,
 Title-case [Modules](#module), camel-case [Elements](#element). why-not-dashes ? Because cased names are more readable (very objective explanation, I know). Furthermore, if we see a class name that doesntStartWithTitleCase we know that it's not a module.
 
     .MyModule {
+      ...
+    }
+    
+    .MyModule-myElement {
+      ...
+    }
+    
+    .MyModule-myElement--modifier {
+      ...
+    }
+
+    .MyModule--modifier {
+      ...
+      
       .MyModule-myElement {
         ...
       }
-      .MyModule-myElement--modifier {
-        ...
-      }
-    }
-    
-    .MyModule--modifier {
-      ...
     }
     
     .MyModule.is-state {
@@ -136,6 +143,7 @@ Selectively using `@extend` with [Module Modifiers](#module-modifier) in some ca
 # DRY
 
 [[ pen ]](http://codepen.io/gilbox/pen/adAtp?editors=010)
+[[ pen - v2 ]]((http://codepen.io/gilbox/pen/lKAIL?editors=010)) <-- todo: update below with v2 style ?
 
 I'm not entirely sure this is a good idea, but here goes: 
 
