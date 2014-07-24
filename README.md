@@ -102,7 +102,7 @@ These rules should be completely flat. They include what are often called [utili
     
 # Semantics
 
-**When choosing class names, ignore function, and concentrate on style.** Just because we have a section on our website named *music* doesn't meen that we should name our [Module](#module) `MusicCard`. Name it `Card` instead. But if we need a [modifier](#module-modifier) for a green-tinted card in the section we're currently working on (which happens to be the music section) name it `Card--greenTint`. If it truly is specific to that section then `Card--music` is OK if nothing else comes to mind.
+**When choosing class names, ignore function, and concentrate on style.** Just because we have a section on our website named *music* doesn't mean that we should name our [Module](#module) `MusicCard`. Name it `Card` instead. But if we need a [modifier](#module-modifier) for a green-tinted card in the section we're currently working on (which happens to be the music section) name it `Card--greenTint`. If it truly is specific to that section then `Card--music` is OK if nothing else comes to mind.
 
 There is a lot of seemingly conflicting information about CSS semantics. Some people say to name your class by function like this:
 
@@ -112,7 +112,7 @@ instead of
 
     <div class="Btn">FB</div>
     
-However, we favor the second approach. Using the `.FacebookBtn` class name is convenient when you're using a library like jQuery because it keeps your JavaScript code semantically currect. However, with HTML5 and modern frameworks like angularjs the markup is already semantically correct via the use of custom element naming, attributes, and event handlers which declaratively describe the content and its function.
+However, we favor the second approach. Using the `.FacebookBtn` class name is convenient when you're using a library like jQuery because it keeps your JavaScript code semantically correct. However, with HTML5 and modern frameworks like angularjs the markup is already semantically correct via the use of custom element naming, attributes, and event handlers which declaratively describe the content and its function.
 
 What about our Jasmine unit tests which are heavy with jQuery selectors? If class names are *un-semantic* does that force us to write unit tests that break when simple stylistic changes are made to the interface? Not if we favor the use of attribute and element selectors in our unit tests which generally means the tests will only break when functionality changes.
 
