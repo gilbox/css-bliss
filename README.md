@@ -142,10 +142,8 @@ Selectively using `@extend` with [Module Modifiers](#module-modifier) in some ca
 
 # DRY
 
-[[ pen ]](http://codepen.io/gilbox/pen/adAtp?editors=010)
-[[ pen - v2 ]](http://codepen.io/gilbox/pen/lKAIL?editors=010) <-- todo: update below with v2 style ?
+[[ pen ]](http://codepen.io/gilbox/pen/lKAIL?editors=010)
 
-I'm not entirely sure this is a good idea, but here goes: 
 
     .MyModule {
       ...
@@ -155,13 +153,14 @@ I'm not entirely sure this is a good idea, but here goes:
       
       &-myOtherElement {
         ...
-        &--myModifier {
-          ...
-        }
-        
-        &--anotherModifier {
-          ...
-        }
+      }
+      
+      &-myOtherElement--myModifier {
+        ...
+      }
+      
+      &-myOtherElement--anotherModifier {
+        ...
       }
     }
     
@@ -172,9 +171,10 @@ and module modifiers:
       .MyModule {
         &-myOtherElement {
           ...
-          &--anotherModifier {
-            ...
-          }
+        }
+        
+        &-myOtherElement--anotherModifier {
+          ...
         }
       }
     }
