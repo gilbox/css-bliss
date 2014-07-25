@@ -15,8 +15,12 @@ My futuristic thoughts on structuring a SASS project. Ideas all stolen from BEM,
 - [Namespacing](#namespacing)
 - [Linter](#linter)
 
-- If you have questions, comments, or suggestions [please start an Issue.](https://github.com/gilbox/futuristic-sass-guide/issues).
+----
+
+- If you have questions, comments, or suggestions please [open an Issue.](https://github.com/gilbox/futuristic-sass-guide/issues).
 - [PRs are welcome.](https://github.com/gilbox/futuristic-sass-guide/pulls)
+
+----
 
 # General
 
