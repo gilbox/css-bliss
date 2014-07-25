@@ -202,7 +202,7 @@ This DRY approach prevents `@extend`ing [*Elements*](#element) and [*Element Mod
 
 # Directory Structure
 
-Create a new file for each [Module](#modules) and it's [Module Modifiers](#module-modifier) and save inside of the `modules` directory. Use TitleCase naming for module files and dashed-names for everything else. The following example suggests putting non-module rules alongside application.scss in the css dir.
+Create a new file for each [Module](#modules) and it's [Module Modifiers](#module-modifier) and save inside of the `modules` directory. Use TitleCase naming for module files and dashed-names for everything else. The following example suggests putting non-module rules alongside `application.scss` in the `css` dir.
 
     css
      ├─── modules
@@ -213,6 +213,8 @@ Create a new file for each [Module](#modules) and it's [Module Modifiers](#modul
      ├─── colors.scss
      ├─── mixins.scss
      └─── application.scss
+     
+In the example above, the sass compiler is compiling `application.scss` and all of the other files are being `@import`ed from `application.scss` (is this the best way?).
  
 # Positioning a Module inside of a Module
 
