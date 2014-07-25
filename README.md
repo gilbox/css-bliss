@@ -1,7 +1,7 @@
 futuristic-sass-guide
 =====================
 
-My futuristic thoughts on structuring a SASS project. Ideas all stolen from BEM, SMACSS, OOCSS, SUITECSS.
+My futuristic thoughts on structuring a SASS project. Ideas all stolen from BEM, SMACSS, OOCSS, SUITECSS. [Questions? Comments? Suggestions?](https://github.com/gilbox/futuristic-sass-guide/issues). [PRs are welcome.](https://github.com/gilbox/futuristic-sass-guide/pulls)
 
 - [General](#general)
 - [Naming](#naming)
