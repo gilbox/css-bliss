@@ -1,7 +1,7 @@
 futuristic-sass-guide
 =====================
 
-My futuristic thoughts on structuring a SASS project. Ideas all stolen from BEM, SMACSS, OOCSS, SUITECSS. [Questions? Comments? Suggestions?](https://github.com/gilbox/futuristic-sass-guide/issues). [PRs are welcome.](https://github.com/gilbox/futuristic-sass-guide/pulls)
+My futuristic thoughts on structuring a SASS project. Ideas all stolen from BEM, SMACSS, OOCSS, SUITECSS. 
 
 - [General](#general)
 - [Naming](#naming)
@@ -14,6 +14,9 @@ My futuristic thoughts on structuring a SASS project. Ideas all stolen from BEM,
 - [Positioning a Module inside of a Module](#positioning-a-module-inside-of-a-module)
 - [Namespacing](#namespacing)
 - [Linter](#linter)
+
+- If you have questions, comments, or suggestions [please start an Issue.](https://github.com/gilbox/futuristic-sass-guide/issues).
+- [PRs are welcome.](https://github.com/gilbox/futuristic-sass-guide/pulls)
 
 # General
 
