@@ -127,6 +127,14 @@ What about our Jasmine unit tests which are heavy with jQuery selectors? If clas
 
 Above each [Module](#module), describe the purpose of the [Module](#module), as well as it's scope. Be restrictive and specific so that when someone else looks at it and needs to add some styling, they will know if they should add-on to the [Module](#module) or create a new one.
 
+    // A floating dialog with dropshadow, rounded borders, and a header.
+    // Includes the header text, but not any buttons and none of the other content inside of the dialog.
+    .PopupDialog {
+        ...
+    }
+    
+Note that in the example above, the comment answers the question, **what *is* and *isn't* a PopupDialog Module allowed to style?**. Later, if one of our teammates wants to add a close button to this dialog, they can read this comment and determine that the close button should probably be a Module in it's own right, and not an element of the `PopupDialog` module.
+
 # %placeholder
 
 Keep `%placeholders` flat, [here's why](http://oliverjash.me/2012/09/07/methods-for-modifying-objects-in-oocss.html).
