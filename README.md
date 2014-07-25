@@ -11,7 +11,7 @@ My futuristic thoughts on structuring a SASS project. Ideas all stolen from BEM,
 - [%placeholder](#placeholder)
 - [@extend](#extend)
 - [DRY](#dry)
-- [Directory Structure](#directory-structure)
+- [Directory Structure and File Naming](#directory-structure-and-file-naming)
 - [Positioning a Module inside of a Module](#positioning-a-module-inside-of-a-module)
 - [Namespacing](#namespacing)
 - [Linter](#linter)
@@ -200,7 +200,7 @@ A downside is that doing a full-text search for a class won't take us where we n
 
 This DRY approach prevents `@extend`ing [*Elements*](#element) and [*Element Modifiers*](#element-modifier). This is good because `@extend`ing these nested classes creates confusing and difficult to maintain code.
 
-# Directory Structure
+# Directory Structure and File Naming
 
 Create a new file for each [Module](#modules) and it's [Module Modifiers](#module-modifier) and save inside of the `modules` directory. Use TitleCase naming for module files and dashed-names for everything else. The following example suggests putting non-module rules alongside `application.scss` in the `css` dir.
 
