@@ -18,7 +18,7 @@ My futuristic thoughts on structuring a SASS project. Ideas all stolen from [BEM
 
 ----
 
-If you have questions, comments, or suggestions please [open an Issue](https://github.com/gilbox/futuristic-sass-guide/issues). Also, [PRs](https://github.com/gilbox/futuristic-sass-guide/pulls) are welcome.
+If you have questions, comments, or suggestions please [open an Issue](https://github.com/gilbox/futuristic-sass-guide/issues). And of course, [PRs](https://github.com/gilbox/futuristic-sass-guide/pulls) are welcome.
 
 ----
 
