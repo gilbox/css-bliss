@@ -205,15 +205,17 @@ Create a new file for each [Module](#modules) and it's [Module Modifiers](#modul
 
     css
      ├─── modules
-     |     ├──── PopupDialog.scss
-     |     ├──── Btn.scss
-     |     └──── ElmInfo.scss
-     ├─── base.scss
-     ├─── colors.scss
-     ├─── mixins.scss
+     |     ├──── _PopupDialog.scss
+     |     ├──── _Btn.scss
+     |     └──── _ElmInfo.scss
+     ├─── _base.scss
+     ├─── _colors.scss
+     ├─── _mixins.scss
      └─── application.scss
      
 In the example above, the sass compiler is compiling `application.scss` and all of the other files are being `@import`ed from `application.scss` (is this the best way?).
+
+Use the SASS underscore naming convention whereby all files that should only be `@import`ed and never compiled directly begin with underscore.
  
 # Positioning a Module inside of a Module
 
