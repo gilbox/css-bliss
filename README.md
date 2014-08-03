@@ -202,6 +202,8 @@ A downside is that doing a full-text search for a class won't take us where we n
 
 This DRY approach prevents `@extend`ing [*Elements*](#element) and [*Element Modifiers*](#element-modifier). This is good because `@extend`ing these nested classes creates confusing and difficult to maintain code.
 
+> CAVEAT: Contrary to the guildelines in this section, at present I do not think we should be doing `&-myOtherElement` and `&-myOtherElement--anotherModifier` nested inside of `.MyModule`, but instead `.MyModule-myOtherElement` and `.MyModule-myOtherElement--anotherModifier` inside of the [Module Modifier](@module-modifier).
+
 # Directory Structure and File Naming
 
 Create a new file for each [Module](#modules) and it's [Module Modifiers](#module-modifier) and save inside of the `modules` directory. Use TitleCase naming for module files and dashed-names for everything else. The following example suggests putting non-module rules alongside `application.scss` in the `css` dir.
