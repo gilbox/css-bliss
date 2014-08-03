@@ -71,7 +71,7 @@ Title-case [Modules](#module), camel-case [Elements](#element). why-not-dashes ?
 - `.TitleCase`
 - Self-contained
 - Can be `@extend`ed to create [Module Modifiers](#module-modifier)
-- Most Modules should not set their own width, margin, and positioning. By authoring a module to be full-width or inline, it can better adapt to the dimensions of an ancestral context. [(source)](https://github.com/suitcss/suit/blob/master/doc/components.md#adapting-to-ancestral-context)
+- Most Modules should not set their own width, margin, and positioning. By authoring a module to be **full-width or inline**, it can better adapt to the dimensions of an ancestral context. [(source)](https://github.com/suitcss/suit/blob/master/doc/components.md#adapting-to-ancestral-context)
     - No margin
     - No top, left, right, bottom
     - 100% width, or auto width
@@ -87,13 +87,13 @@ Title-case [Modules](#module), camel-case [Elements](#element). why-not-dashes ?
 
 - `-camelCase`
 - Each element has an associated module ie: `.MyModule-myElement`
-- Should **not** be effected by any [Module](#module) except for it's own. Ie., the Module can be nested inside of any other Module and it should not effect the appearance of the element.
+- Nesting [Modules](#module) should **not** effect the appearance of any Element. 
 
 ## Element Modifier
 
 - `--camelCase`
 - Each modifier has an associated [Element](#element) ie: `.MyModule-myElement--myModifier`
-- Should **not** be effected by another other [Element](#element) except for its own. Ie., the [Module](#module) can be nested inside of any other [Module](#module) and it should not effect the appearance of the modifier.
+- Nesting [Modules](#module) should **not** effect the appearance of any Element Modifier. 
 - Subclasses an [Element](#element)
 
 ## State
