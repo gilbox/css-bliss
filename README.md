@@ -104,7 +104,8 @@ Title-case [Modules](#module), camel-case [Elements](#element). why-not-dashes ?
 
 ## .plainJaneRules
 
-These rules should be completely flat. They include what are often called [utility classes](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md#u-utilityName) and [layout rules](http://smacss.com/book/type-layout).
+- `.camelCase`
+- These rules should be completely flat. They include what are often called [utility classes](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md#u-utilityName) and [layout rules](http://smacss.com/book/type-layout).
 
     
 # Semantics
