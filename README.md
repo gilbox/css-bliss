@@ -155,7 +155,7 @@ Keep `%placeholders` flat, [here's why](http://oliverjash.me/2012/09/07/methods-
 
 Selectively using `@extend` with [Module Modifiers](#module-modifier) in some cases and not in others might not be such a bad thing **so long as we only ever `@extend` the base module class**. Whenever we see a [Module Modifier](#module-modifier) class without a superclass, we can safely assume that it's been extended, and because of modifier naming convention we know exactly which [Module](#module) it `@extend`s.
 
-> CAVEAT: Contrary to the guildelines in this section, at present I do not think we should be `@extend`ing [Modules](#module).
+> CAVEAT: Contrary to the guildelines in this section, at present I do not think we should be `@extend`ing [Modules](#module) because (1) keeping modules totally flat may be near impossible, (2) `@extend` might result in more code than simple subclassing most of the time, (3) `@extend` is incompatible with media queries, (4) `@extend` makes understanding the cascade of SCSS code very difficult.  
 
 # DRY
 
