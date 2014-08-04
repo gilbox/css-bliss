@@ -70,7 +70,7 @@ Title-case [Modules](#module), camel-case [Elements](#element). why-not-dashes ?
 
 - `.TitleCase`
 - Self-contained
-- Can be `@extend`ed to create [Module Modifiers](#module-modifier)
+- Cannot be `@extend`ed to create [Module Modifiers](#module-modifier)
 - Most Modules should not set their own width, margin, and positioning. By authoring a module to be **full-width or inline**, it can better adapt to the dimensions of an ancestral context. [(source)](https://github.com/suitcss/suit/blob/master/doc/components.md#adapting-to-ancestral-context)
     - No margin
     - No top, left, right, bottom
@@ -80,7 +80,8 @@ Title-case [Modules](#module), camel-case [Elements](#element). why-not-dashes ?
 
 - `--camelCase`
 - Could possibly define margin, top, left, right, or bottom but should probably be avoided in most cases.
-- Subclasses, or `@extend`s a Module
+- Subclasses a Module
+- Do not `@extend` a Module to create a Module Modifier
 - Do not `@extend` a Module Modifier to create another Module Modifier
 
 ## Element
@@ -146,17 +147,13 @@ Keep `%placeholders` flat, [here's why](http://oliverjash.me/2012/09/07/methods-
 
 `%placeholder`s should be small pieces of reusable styling, and [they should do one thing and do it well](http://en.wikipedia.org/wiki/Single_responsibility_principle).
 
-**Todo**: establish a naming convention for `@extend`s ?
+**Todo**: establish a naming convention for `@placeholder`s ?
 
 # @extend
 
-[[ pen ]](http://codepen.io/gilbox/pen/zpIxf?editors=010)
+We don't `@extend` [Modules](#module) because (1) keeping modules totally flat may be near impossible, (2) `@extend` might result in more code than simple subclassing most of the time, (3) `@extend` is incompatible with media queries, (4) `@extend` makes understanding the cascade of SCSS code very difficult.
 
-**If we keep Modules flat** by strictly following the structure laid out in this guide, then **we can use `@extend` to create module modifiers** without unnecessary class selectors in the compiled CSS code.
-
-Selectively using `@extend` with [Module Modifiers](#module-modifier) in some cases and not in others might not be such a bad thing **so long as we only ever `@extend` the base module class**. Whenever we see a [Module Modifier](#module-modifier) class without a superclass, we can safely assume that it's been extended, and because of modifier naming convention we know exactly which [Module](#module) it `@extend`s.
-
-> CAVEAT: Contrary to the guildelines in this section, at present I do not think we should be `@extend`ing [Modules](#module) because (1) keeping modules totally flat may be near impossible, (2) `@extend` might result in more code than simple subclassing most of the time, (3) `@extend` is incompatible with media queries, (4) `@extend` makes understanding the cascade of SCSS code very difficult.  
+In most cases, using `@extend` can lead to confusion and should probably be avoided.
 
 # DRY
 
@@ -186,14 +183,12 @@ and module modifiers:
 
     .MyModule--myModifier {
       ...
-      .MyModule {
-        &-myOtherElement {
-          ...
-        }
+      .MyModule-myOtherElement {
+        ...
+      }
         
-        &-myOtherElement--anotherModifier {
-          ...
-        }
+      .MyModule-myOtherElement--anotherModifier {
+        ...
       }
     }
     
@@ -201,8 +196,6 @@ and module modifiers:
 A downside is that doing a full-text search for a class won't take us where we need to go, but if the naming convention is well-established we'll have that in mind when searching anyway. Also, is this code more or less readable than the verbose version?
 
 This DRY approach prevents `@extend`ing [*Elements*](#element) and [*Element Modifiers*](#element-modifier). This is good because `@extend`ing these nested classes creates confusing and difficult to maintain code.
-
-> CAVEAT: Contrary to the guildelines in this section, at present I do not think we should be doing `&-myOtherElement` and `&-myOtherElement--anotherModifier` nested inside of `.MyModule`, but instead `.MyModule-myOtherElement` and `.MyModule-myOtherElement--anotherModifier` inside of the [Module Modifier](@module-modifier).
 
 # Directory Structure and File Naming
 
