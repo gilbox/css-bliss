@@ -226,6 +226,10 @@ We will inevitably want to nest [Modules](#module) inside of modules. There are 
 
 ### SCSS
 
+    .Btn {
+      ...
+    }
+    
     .PopupDialog {
       ...
       &-closeBtn {
