@@ -139,10 +139,11 @@ Note that in the example above, the comment answers the question, **what *is* an
 
 # %placeholder
 
-Keep `%placeholders` flat, [here's why](http://oliverjash.me/2012/09/07/methods-for-modifying-objects-in-oocss.html).
+The [next section](#extend) discusses why we should avoid using `@extend`. However if we do use `@extend` despite our trepedations, we will try to restrict its use to placeholders.  As we should with any `@extend`ed class, keep `%placeholders` flat, [here's why](http://oliverjash.me/2012/09/07/methods-for-modifying-objects-in-oocss.html).
 
     %placeholder {
-      // avoid nesting .child rules at all cost...
+      // avoid nesting .anyClassRules at all cost...
+      .dontDoThis { ... }
     }
 
 `%placeholder`s should be small pieces of reusable styling, and [they should do one thing and do it well](http://en.wikipedia.org/wiki/Single_responsibility_principle).
@@ -151,9 +152,9 @@ Keep `%placeholders` flat, [here's why](http://oliverjash.me/2012/09/07/methods-
 
 # @extend
 
-We don't `@extend` [Modules](#module) because (1) keeping modules totally flat may be near impossible, (2) `@extend` might result in more code than simple subclassing most of the time, (3) `@extend` is incompatible with media queries, (4) `@extend` makes understanding the cascade of SCSS code very difficult.
+We don't `@extend` [Modules](#module) to create [Module Modifiers](#module-modifier) because **(1)** keeping modules totally flat may be near impossible, **(2)** `@extend` might result in more code than simple subclassing most of the time, **(3)** `@extend` is incompatible with media queries, **(4)** `@extend` makes understanding the cascade of SCSS code very difficult.
 
-In most cases, using `@extend` can lead to confusion and should probably be avoided.
+What about uses `@extend` in other rules? **In most cases, using `@extend` can lead to confusion and should probably be avoided.**
 
 # DRY
 
