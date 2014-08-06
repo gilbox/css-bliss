@@ -78,6 +78,8 @@ Title-case [Modules](#module), camel-case [Elements](#element). why-not-dashes ?
 
 ## Module Modifier
 
+[[ pen ]](http://codepen.io/gilbox/pen/cDkzn?editors=010)
+
 - `--camelCase`
 - Could possibly define margin, top, left, right, or bottom but should probably be avoided in most cases.
 - Subclasses a Module
