@@ -216,7 +216,7 @@ Create a new file for each [Module](#modules) and it's [Module Modifiers](#modul
      
 In the example above, the sass compiler is compiling `application.scss` and all of the other files are being `@import`ed from `application.scss` (is this the best way?).
 
-Use the SASS underscore naming convention whereby all files that should only be `@import`ed and never compiled directly begin with underscore.
+Use the SASS underscore naming convention whereby **all partials begin with underscore**.
  
 # Positioning a Module inside of a Module
 
