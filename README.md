@@ -146,7 +146,7 @@ The [next section](#extend) discusses why we should avoid using `@extend`. Howev
 
 `%placeholder`s should be small pieces of reusable styling, and [they should do one thing and do it well](http://en.wikipedia.org/wiki/Single_responsibility_principle).
 
-**Todo**: establish a naming convention for `@placeholder`s ?
+**Todo**: establish a naming convention for `%placeholder`s ?
 
 # @extend
 
