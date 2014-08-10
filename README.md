@@ -33,7 +33,9 @@ If you have questions, comments, or suggestions please [open an Issue](https://g
 
 # Naming
 
-Title-case [Modules](#module), camel-case [Elements](#element). why-not-dashes ? Because cased names are more readable (very objective explanation, I know). Furthermore, if we see a class name that doesntStartWithTitleCase we know that it's not a module. (**Note**: The following does *not* match the conventions laid out in the [DRY](#dry) section because **this is the compiled CSS code**, *not* the SASS code.)
+Title-case [Modules](#module), camel-case [Elements](#element). why-not-dashes ? Because cased names are more readable (very objective explanation, I know). Furthermore, if we see a class name that doesntStartWithTitleCase we know that it's not a module.
+
+**Note**: The following example does *not* match the conventions laid out in the [DRY](#dry) section because **this is the compiled CSS code, *not* the SASS code**.
 
     .MyModule {
       ...
