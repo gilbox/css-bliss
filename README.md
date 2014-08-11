@@ -154,7 +154,11 @@ The [next section](#extend) discusses why we should avoid using `@extend`. Howev
 
 # @extend
 
-We don't `@extend` [Modules](#module) to create [Module Modifiers](#module-modifier) because **(1)** keeping modules totally flat may be near impossible, **(2)** `@extend` might result in more code than simple subclassing most of the time, **(3)** `@extend` is incompatible with media queries, **(4)** `@extend` makes understanding the cascade of SCSS code very difficult.
+We don't `@extend` [Modules](#module) to create [Module Modifiers](#module-modifier) because 
+1. keeping modules totally flat may be near impossible
+2. `@extend` can result in more code than simple subclassing
+3. `@extend` is incompatible with media queries
+4. `@extend` makes understanding the cascade of SCSS code very difficult
 
 What about using `@extend` in other rules? **In most cases, using `@extend` can lead to confusion and should probably be avoided.**
 
