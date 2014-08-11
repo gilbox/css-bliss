@@ -155,6 +155,7 @@ The [next section](#extend) discusses why we should avoid using `@extend`. Howev
 # @extend
 
 We don't `@extend` [Modules](#module) to create [Module Modifiers](#module-modifier) because 
+
 1. keeping modules totally flat may be near impossible
 2. `@extend` can result in more code than simple subclassing
 3. `@extend` is incompatible with media queries
