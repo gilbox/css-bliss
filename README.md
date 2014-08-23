@@ -229,7 +229,7 @@ We will inevitably want to nest [Modules](#module) inside of modules. There are 
 
 ## Preferred approach using Element Modifier
 
-[[ pen ]](http://codepen.io/gilbox/pen/fwBhe?editors=010)
+[`[ pen ]`](http://codepen.io/gilbox/pen/fwBhe?editors=010)
 
 Here we subclass `.Btn` with `.PopupDialog-closeBtn`:
 
@@ -257,7 +257,7 @@ Here we subclass `.Btn` with `.PopupDialog-closeBtn`:
 
 ## Alternate approach using Module Modifier
 
-[[ pen ]](http://codepen.io/gilbox/pen/LbKml?editors=010) -
+[`[ pen ]`](http://codepen.io/gilbox/pen/LbKml?editors=010)
 
 Here we subclass `.Btn` with `.Btn--pullRight`:
 
