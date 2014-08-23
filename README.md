@@ -225,7 +225,8 @@ Use the SASS underscore naming convention whereby **all partials begin with unde
  
 # Positioning a Module inside of a Module
 
-[[ pen ]](http://codepen.io/gilbox/pen/fwBhe?editors=010)
+[[ pen - Preferred approach using Element Modifier ]](http://codepen.io/gilbox/pen/fwBhe?editors=010)
+[[ pen - Alternate approach using Module Modifier ]](http://codepen.io/gilbox/pen/LbKml?editors=010)
 
 We will inevitably want to nest [Modules](#module) inside of modules. There are [various ways](http://stackoverflow.com/questions/24724929/smacss-and-bem-how-to-position-module-inside-of-a-module) that we could possibly position one [Module](#module) inside of another. In most cases we should **subclass the child [Module](#module) with an [*Element*](#element) class in the parent [Module](#module)**. For example, here we subclass `.Btn` with `.PopupDialog-closeBtn`:
 
