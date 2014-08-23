@@ -76,7 +76,7 @@ TitleCase [Modules](#module), camelCase [Elements](#element). why-not-dashes ? B
 
 ## Module Modifier
 
-[[ pen ]](http://codepen.io/gilbox/pen/cDkzn?editors=010)
+[`[ pen ]`](http://codepen.io/gilbox/pen/cDkzn?editors=010)
 
 - `--camelCase`
 - Could possibly define margin, top, left, right, or bottom but should probably be avoided in most cases.
@@ -165,7 +165,7 @@ What about using `@extend` in other rules? **In most cases, using `@extend` can 
 
 # DRY
 
-[[ pen ]](http://codepen.io/gilbox/pen/lKAIL?editors=010)
+[`[ pen ]`](http://codepen.io/gilbox/pen/lKAIL?editors=010)
 
 
     .MyModule {
