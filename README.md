@@ -225,11 +225,13 @@ Use the SASS underscore naming convention whereby **all partials begin with unde
  
 # Positioning a Module inside of a Module
 
-[[ pen - Preferred approach using Element Modifier ]](http://codepen.io/gilbox/pen/fwBhe?editors=010)
+We will inevitably want to nest [Modules](#module) inside of modules. There are [various ways](http://stackoverflow.com/questions/24724929/smacss-and-bem-how-to-position-module-inside-of-a-module) that we could possibly position one [Module](#module) inside of another. In most cases we should **subclass the child [Module](#module) with an [*Element*](#element) class in the parent [Module](#module)**. 
 
-[[ pen - Alternate approach using Module Modifier ]](http://codepen.io/gilbox/pen/LbKml?editors=010)
+## Preferred approach using Element Modifier
 
-We will inevitably want to nest [Modules](#module) inside of modules. There are [various ways](http://stackoverflow.com/questions/24724929/smacss-and-bem-how-to-position-module-inside-of-a-module) that we could possibly position one [Module](#module) inside of another. In most cases we should **subclass the child [Module](#module) with an [*Element*](#element) class in the parent [Module](#module)**. For example, here we subclass `.Btn` with `.PopupDialog-closeBtn`:
+[[ pen ]](http://codepen.io/gilbox/pen/fwBhe?editors=010)
+
+Here we subclass `.Btn` with `.PopupDialog-closeBtn`:
 
 ### SCSS
 
@@ -253,7 +255,31 @@ We will inevitably want to nest [Modules](#module) inside of modules. There are 
       <button class="Btn PopupDialog-closeBtn"><i class="closeIco"></i> close</btn>
     </div>
 
+Alternate approach using Module Modifier
 
+[[ pen ]](http://codepen.io/gilbox/pen/LbKml?editors=010) -
+
+Here we subclass `.Btn` with `.Btn--pullRight`:
+
+### SCSS
+
+    .Btn {
+      ...
+    }
+    
+    .Btn--pullRight {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+    
+### Markup
+
+    <div class="PopupDialog">
+      ...
+      <button class="Btn Btn--pullRight"><i class="closeIco"></i> close</btn>
+    </div>
+    
 # Namespacing
 
 I don't like how it negatively effects readability, but if we need to namespace, prepend a lowercase two or three letter abbreviation.
