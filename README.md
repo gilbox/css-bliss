@@ -255,7 +255,7 @@ Here we subclass `.Btn` with `.PopupDialog-closeBtn`:
       <button class="Btn PopupDialog-closeBtn"><i class="closeIco"></i> close</btn>
     </div>
 
-Alternate approach using Module Modifier
+## Alternate approach using Module Modifier
 
 [[ pen ]](http://codepen.io/gilbox/pen/LbKml?editors=010) -
 
