@@ -173,7 +173,7 @@ What about using `@extend` in other rules? **In most cases, using `@extend` can 
 
 When a `@mixin` is declared **inside of a [Module](#module)**:
 
-- Naming: `@MyModule-mixinDescription`
+- **Naming:** `@MyModule-mixinDescriptor`
 - It may not be used outside of the [Module](#module) in which it is declared.
 
 # DRY
