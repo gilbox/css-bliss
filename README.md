@@ -10,6 +10,7 @@ My futuristic thoughts on structuring a SASS project. Ideas all stolen from [BEM
 - [Comments](#comments)
 - [%placeholder](#placeholder)
 - [@extend](#extend)
+- [@mixin](#mixin)
 - [DRY](#dry)
 - [Directory Structure and File Naming](#directory-structure-and-file-naming)
 - [Positioning a Module inside of a Module](#positioning-a-module-inside-of-a-module)
@@ -167,6 +168,13 @@ Don't `@extend` [Modules](#module) to create [Module Modifiers](#module-modifier
 4. `@extend` makes understanding the cascade of SCSS code very difficult
 
 What about using `@extend` in other rules? **In most cases, using `@extend` can lead to confusion and should probably be avoided.**
+
+# @mixin
+
+When a `@mixin` is declared **inside of a [Module](#module)**:
+
+- Naming: `@MyModule-mixinDescription`
+- It may not be used outside of the [Module](#module) in which it is declared.
 
 # DRY
 
