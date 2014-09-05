@@ -146,7 +146,7 @@ Note that in the example above, the comment answers the question, **what *is* an
 - **Restrictions:** 
      - Placeholders may only be declared inside of [Modules](#module).
      - [Modules](#module) may only use placeholders declared inside of them.
-     - A placeholder declared inside of a [Modules](#module) may not be used anywhere else.
+     - A placeholder declared inside of a [Module](#module) may not be used anywhere else.
      
 The [next section](#extend) discusses why we should avoid using `@extend`. However if we do use `@extend` despite our trepedations, we will try to restrict its use to placeholders.  And as we should with any `@extend`ed class, **keep `%placeholders` flat**, [here's why](http://oliverjash.me/2012/09/07/methods-for-modifying-objects-in-oocss.html).
 
