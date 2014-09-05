@@ -176,6 +176,11 @@ When a `@mixin` is declared **inside of a [Module](#module)**:
 - **Naming:** `@MyModule-mixinDescriptor`
 - It may not be used outside of the [Module](#module) in which it is declared.
 
+When a `@mixin` is declared **outside of a [Module](#module)**:
+
+- **Naming:** `@mixinDescriptor`
+- It should not generate complex nested structures.
+
 # DRY
 
 [`[ pen ]`](http://codepen.io/gilbox/pen/lKAIL?editors=010)
