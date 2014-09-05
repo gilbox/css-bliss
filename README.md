@@ -104,7 +104,7 @@ TitleCase [Modules](#module), camelCase [Elements](#element). why-not-dashes ? B
 - Used in conjunction with JavaScript
 - **No** style except in context with another rule. For example: `.MyModule.is-state`, `.MyModule-myElement.is-state`, `.MyModule-myElement--myModifier.is-state`, `.is-state .MyModule-myElement`, etc.
 
-## .simpleRules
+## Simple Rules
 
 - `.camelCase`
 - These rules should be completely flat. They include what are often called [utility classes](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md#u-utilityName) and [layout rules](http://smacss.com/book/type-layout).
