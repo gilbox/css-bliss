@@ -141,6 +141,12 @@ Note that in the example above, the comment answers the question, **what *is* an
 
 # %placeholder
 
+- **Naming:** `%MyModule-placeholderDescriptor`
+- **Restrictions:** 
+     - Placeholders may only be declared inside of [Modules](#module).
+     - [Modules](#module) may only use placeholders declared inside of them.
+     - A placeholder declared inside of a [Modules](#module) may not be used anywhere else.
+     
 The [next section](#extend) discusses why we should avoid using `@extend`. However if we do use `@extend` despite our trepedations, we will try to restrict its use to placeholders.  And as we should with any `@extend`ed class, **keep `%placeholders` flat**, [here's why](http://oliverjash.me/2012/09/07/methods-for-modifying-objects-in-oocss.html).
 
     %placeholder {
@@ -150,11 +156,10 @@ The [next section](#extend) discusses why we should avoid using `@extend`. Howev
 
 `%placeholder`s should be small pieces of reusable styling, and [they should do one thing and do it well](http://en.wikipedia.org/wiki/Single_responsibility_principle).
 
-**Todo**: establish a naming convention for `%placeholder`s ?
 
 # @extend
 
-We don't `@extend` [Modules](#module) to create [Module Modifiers](#module-modifier) because 
+Don't `@extend` [Modules](#module) to create [Module Modifiers](#module-modifier) because 
 
 1. keeping modules totally flat may be near impossible
 2. `@extend` can result in more code than simple subclassing
