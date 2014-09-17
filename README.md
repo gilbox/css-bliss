@@ -14,6 +14,7 @@ My futuristic thoughts on structuring a SASS project. Ideas all stolen from [BEM
 - [DRY](#dry)
 - [Directory Structure and File Naming](#directory-structure-and-file-naming)
 - [Positioning a Module inside of a Module](#positioning-a-module-inside-of-a-module)
+- [z-index](#z-index)
 - [Namespacing](#namespacing)
 - [Linter](#linter)
 
@@ -235,6 +236,7 @@ Create a new file for each [Module](#modules) and it's [Module Modifiers](#modul
      ├─── _base.scss
      ├─── _colors.scss
      ├─── _mixins.scss
+     ├─── _zindex.scss
      └─── application.scss
      
 In the example above, the sass compiler is compiling `application.scss` and all of the other files are being `@import`ed from `application.scss` (is this the best way?).
@@ -298,6 +300,10 @@ Here we subclass `.Btn` with `.Btn--pullRight`:
       <button class="Btn Btn--pullRight"><i class="closeIco"></i> close</btn>
     </div>
     
+# z-index
+
+All z-index rules reference `$zindexVariables` in `_zindex.scss`. This [creates a central place](http://css-tricks.com/handling-z-index/) to manage z-indexes accross the application.
+
 # Namespacing
 
 I don't like how it negatively effects readability, but if we need to namespace, prepend a lowercase two or three letter abbreviation.
