@@ -275,7 +275,7 @@ Here we subclass `.Btn` with `.PopupDialog-closeBtn`:
       <button class="Btn PopupDialog-closeBtn"><i class="closeIco"></i> close</btn>
     </div>
 
-Note that the above approach is extremely flexibile. If we wanted to swap out the `Btn` module for a different button module, it wouldn't require any CSS changes. (And if we have a [pattern](http://ux.mailchimp.com/patterns) [library](http://alistapart.com/blog/post/getting-started-with-pattern-libraries), such a change would be as simple as copy-and-pasting some [markup](http://patterns.alistapart.com/).)
+Note that the above approach is extremely flexibile. If we want to swap out the `Btn` module for a different button module, it won't require any CSS changes. (And if we have a [pattern](http://ux.mailchimp.com/patterns) [library](http://alistapart.com/blog/post/getting-started-with-pattern-libraries), such a change will be as simple as copy-and-pasting some [markup](http://patterns.alistapart.com/).)
 
 ## Alternate approach using Module Modifier
 
