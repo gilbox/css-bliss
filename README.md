@@ -275,6 +275,8 @@ Here we subclass `.Btn` with `.PopupDialog-closeBtn`:
       <button class="Btn PopupDialog-closeBtn"><i class="closeIco"></i> close</btn>
     </div>
 
+Note that the above approach is extremely flexibile. If we wanted to swap out the `Btn` module for a different button module--`MiniBtn`, for instance--it wouldn't require any CSS changes. If we have( a [pattern](http://ux.mailchimp.com/patterns) [library](http://alistapart.com/blog/post/getting-started-with-pattern-libraries), it would be as simple as copy-and-pasting some [markup](http://patterns.alistapart.com/).)
+
 ## Alternate approach using Module Modifier
 
 [`[ pen ]`](http://codepen.io/gilbox/pen/LbKml?editors=010)
@@ -300,6 +302,8 @@ Here we subclass `.Btn` with `.Btn--pullRight`:
       <button class="Btn Btn--pullRight"><i class="closeIco"></i> close</btn>
     </div>
     
+Note that the above approach is inflexibly because we won't be able to easily swap out the button in the future without changing the styling. Also, since it creates an unpredictable parent-child module positioning relationship the code is fragile and difficult to refactor.
+
 # z-index
 
 All z-index rules reference `$zindexVariables` in `_zindex.scss`. This [creates a central place](http://css-tricks.com/handling-z-index/) to manage z-indexes accross the application.
