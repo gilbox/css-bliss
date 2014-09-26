@@ -11,6 +11,7 @@ My futuristic thoughts on structuring a SASS project. Ideas all stolen from [BEM
 - [%placeholder](#placeholder)
 - [@extend](#extend)
 - [@mixin](#mixin)
+- [$variable](#variable)
 - [DRY](#dry)
 - [Directory Structure and File Naming](#directory-structure-and-file-naming)
 - [Positioning a Module inside of a Module](#positioning-a-module-inside-of-a-module)
@@ -181,6 +182,15 @@ When a `@mixin` is declared **outside of a [Module](#module)**:
 
 - **Naming:** `@mixinDescriptor`
 - It should not generate complex nested structures.
+
+# $variable
+
+When a `$variable` is declared **inside of a [Module](#module)**:
+
+- **Naming:** `$MyModule-variableDescriptor`
+- It may not be used outside of the [Module](#module) in which it is declared.
+
+The purpose of this rule is to make it easy to identify local vs global variables.
 
 # DRY
 
