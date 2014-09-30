@@ -312,7 +312,7 @@ Here we subclass `.Btn` with `.Btn--pullRight`:
       <button class="Btn Btn--pullRight"><i class="closeIco"></i> close</btn>
     </div>
     
-Note that the above approach is inflexible because in the future we won't be able to easily swap out the button without changing the styling. Also, since it creates an unpredictable parent-child module positioning relationship the code is fragile and difficult to refactor.
+Note that the above approach is inflexible because in the future we won't be able to easily swap out the button without refactoring the css. Also, since it creates an unpredictable parent-child module positioning relationship the code is fragile which will make it more difficult to maintain.
 
 # z-index
 
