@@ -153,7 +153,7 @@ Note that in the example above, the comment answers the question, **what *is* an
 The [next section](#extend) discusses why we should avoid using `@extend`. However if we do use `@extend` despite our trepedations, we will try to restrict its use to placeholders.  And as we should with any `@extend`ed class, **keep `%placeholders` flat**, [here's why](http://oliverjash.me/2012/09/07/methods-for-modifying-objects-in-oocss.html).
 
     %placeholder {
-      // avoid nesting .anyClassRules at all cost...
+      // avoid nesting .anyClassRules at any cost...
       .dontDoThis { ... }
     }
 
