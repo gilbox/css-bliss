@@ -31,7 +31,7 @@ If you have questions, comments, or suggestions please [open an Issue](https://g
 - SASS gives us too much power. In part the purpose of this guide is to restrict our use of that power.
 - Try to avoid nesting, except as described in the DRY section.
 - **Keep [Modules](#module) small**. When in doubt, create a new [Module](#module) instead of bloating an existing [Module](#module).
-- A class name will never have more than 3 dashes, ie: `.MyModule-myElement--myModifier`
+- A class name will almost never have more than 3 dashes, ie: `.MyModule-myElement--myModifier`
 - Be sure to click the `[ pen ]` links as you encounter them below.
 
 # Naming
@@ -109,6 +109,7 @@ TitleCase [Modules](#module), camelCase [Elements](#element). why-not-dashes ? B
 ## Simple Rules
 
 - `.camelCase`
+- Simple Rules `.may-containDashes` when the dashed word might imply very similar meaning as a function argument does in javascript. A good use-case for dashed utility classes are device-specific classes such as `.col2-mobile`, `.col2-tablet`, etc.
 - These rules should be completely flat. They include what are often called [utility classes](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md#u-utilityName) and [layout rules](http://smacss.com/book/type-layout).
 
     
