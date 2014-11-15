@@ -103,7 +103,7 @@ TitleCase [Modules](#module), camelCase [Elements](#element). why-not-dashes ? B
 ## State
 
 - `.is-camelCase`
-- Used in conjunction with JavaScript
+- Often, but not necessarily used in conjunction with JavaScript
 - **No** style except in context with another rule. For example: `.MyModule.is-state`, `.MyModule-myElement.is-state`, `.MyModule-myElement--myModifier.is-state`, `.is-state .MyModule-myElement`, etc.
 
 ## Simple Rules
