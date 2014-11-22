@@ -147,7 +147,7 @@ Note that in the example above, the comment answers the question, **what *is* an
 
 - **Naming:** `%MyModule-placeholderDescriptor`
 - **Restrictions:** 
-     - Placeholders may only be declared inside of [Modules](#module).
+     - Placeholders may only be declared inside of [Modules](#module). ([why?](http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/))
      - [Modules](#module) may only use placeholders declared inside of them.
      - A placeholder declared inside of a [Module](#module) may not be used anywhere else.
      
