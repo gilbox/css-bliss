@@ -18,6 +18,7 @@ My futuristic thoughts on structuring a SASS project. Ideas all stolen from [BEM
 - [z-index](#z-index)
 - [Namespacing](#namespacing)
 - [Linter](#linter)
+- [Solving Complexity](#solving-complexity)
 
 ----
 
@@ -335,4 +336,12 @@ This tool does not exist, but it would be cool if it did.
 - Enforce flat [`@extend`](#extend)s
 
 
+# Solving Complexity
+
+[solving-complexity.md](https://github.com/gilbox/futuristic-sass-guide/blob/master/solving-complexity.md)
+is another document in this repo inspired by the challenges identified
+by Facebook's [vjeux](https://speakerdeck.com/vjeux).
+solving-complexity presents some additional guidelines, which, when applied
+in addition to this guide
+help to solve problems faced by the most complex websites.
 
