@@ -6,6 +6,7 @@ My futuristic thoughts on structuring a SASS project. Ideas all stolen from [BEM
 - [General](#general)
 - [Naming](#naming)
 - [Building Blocks](#building-blocks)
+- [Encapsulation](#encapsulation)
 - [Semantics](#semantics)
 - [Comments](#comments)
 - [%placeholder](#placeholder)
@@ -114,6 +115,18 @@ TitleCase [Modules](#module), camelCase [Elements](#element). why-not-dashes ? B
 - These rules should be completely flat. They include what are often called [utility classes](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md#u-utilityName) and [layout rules](http://smacss.com/book/type-layout).
 
     
+## Encapsulation
+
+Modules promote strict encapsulation. We achieve encapsulation thusly:
+
+- No module may ever effect any other module by creating a selector that
+  reaches inside of another module.
+- **All** classes inside of a module file are namespaced by the module's name
+  (with the notable exception of state (`.is-`) classes)
+- To achieve the strictest form of encapsulation,
+  no DOM element should ever be assigned module-namespaced classes from more than one module.
+
+
 # Semantics
 
 **When choosing class names, try to ignore function, and concentrate on style.** Just because we have a section on our website named *music* doesn't mean that we should name our music-related card [Module](#module) `MusicCard`. Sure, we can name it `MusicCard` if similar cards do not appear anywhere else on the website. Otherwise, name it `Card` instead. (Since we probably can't know for sure whether the same card might later be added to a new section of the site, when naming classes make a judgement call based on the information available at the time and don't try to plan too far into the future.)
