@@ -139,7 +139,7 @@ Facebook's challenge is that although they try to use modular encapsulation,
 > component, she is going to break all those call sites. It makes you feel fearful
 > of changing code which is very bad. --vjeux
 
-The example that Facebook's vjeux give's of such a selector looks like:
+The example that Facebook's vjeux gives of such a selector looks like:
 
     .product/button > div {
       /* override everything ! */
