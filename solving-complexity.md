@@ -88,7 +88,13 @@ and problem solved:
 
 > ***Modules may not share common elements***
 
-What this means is that if we have a module nested inside of
+The FSG allows us a parent class to sublass a child module like this:
+
+    <div class="ParentModule">
+        <div class=ChildModule ParentModule-child">...</div>
+    </div>
+
+However, with this new rule, if we have a module nested inside of
 another module, the parent may only indirectly affect it's child by wrapping it:
 
     <div class="ParentModule">
