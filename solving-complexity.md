@@ -88,7 +88,7 @@ and problem solved:
 
 > ***Modules may not share common elements***
 
-The FSG allows us a parent class to sublass a child module like this:
+Without this new rule, the FSG allowed a parent Module to sublass a child Module like this:
 
     <div class="ParentModule">
         <div class=ChildModule ParentModule-child">...</div>
