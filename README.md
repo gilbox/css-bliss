@@ -108,7 +108,7 @@ TitleCase [Modules](#module), camelCase [Elements](#element). why-not-dashes ? B
 - Often, but not necessarily used in conjunction with JavaScript
 - **No** style except in context with another rule. For example: `.MyModule.is-state`, `.MyModule-myElement.is-state`, `.MyModule-myElement--myModifier.is-state`, `.is-state .MyModule-myElement`, etc.
 
-## Simple Rules (AKA Utility Classes)
+## Simple Rules (aka Utility Classes)
 
 - `.camelCase`
 - Simple Rules `.may-containDashes` when the dashed word might imply very similar meaning as a function argument does in javascript. A good use-case for dashed utility classes are device-specific classes such as `.col2-mobile`, `.col2-tablet`, etc.
