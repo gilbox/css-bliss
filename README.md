@@ -69,7 +69,7 @@ TitleCase [Modules](#module), camelCase [Elements](#element). why-not-dashes ? B
 
 # Building Blocks
 
-## Module Class
+## Module
 
 - `.TitleCase`
 - Self-contained
@@ -79,7 +79,7 @@ TitleCase [Modules](#module), camelCase [Elements](#element). why-not-dashes ? B
     - No top, left, right, bottom
     - 100% width, or auto width
 
-## Module Modifier Class
+## Module Modifier
 
 [`[ pen ]`](http://codepen.io/gilbox/pen/cDkzn?editors=010)
 
@@ -89,27 +89,27 @@ TitleCase [Modules](#module), camelCase [Elements](#element). why-not-dashes ? B
 - Do not `@extend` a Module to create a Module Modifier
 - Do not `@extend` a Module Modifier to create another Module Modifier
 
-## Element Class
+## Element
 
 - `-camelCase`
 - Each element has an associated module ie: `.MyModule-myElement`
 - Nesting [Modules](#module) should **not** effect the appearance of any Element. 
-- Apply at most **one** Element Class per DOM element.
+- Apply at most **one** Element class per DOM element.
 
-## Element Modifier Class
+## Element Modifier
 
 - `--camelCase`
 - Each modifier has an associated [Element](#element) ie: `.MyModule-myElement--myModifier`
 - Nesting [Modules](#module) should **not** effect the appearance of any Element Modifier. 
 - Subclasses an [Element](#element)
 
-## State Class
+## State
 
 - `.is-camelCase`
 - Often, but not necessarily used in conjunction with JavaScript
 - **No** style except in context with another rule. For example: `.MyModule.is-state`, `.MyModule-myElement.is-state`, `.MyModule-myElement--myModifier.is-state`, `.is-state .MyModule-myElement`, etc.
 
-## Simple Class Rules (aka Utility Classes)
+## Simple Rules (aka Utility Classes)
 
 - `.camelCase`
 - Simple Rules `.may-containDashes` when the dashed word might imply very similar meaning as a function argument does in javascript. A good use-case for dashed utility classes are device-specific classes such as `.col2-mobile`, `.col2-tablet`, etc.
