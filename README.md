@@ -303,6 +303,8 @@ Here we subclass `.Btn` with `.PopupDialog-closeBtn`:
 
 Note that the above approach is extremely flexibile. If we want to swap out the `Btn` module for a different button module, it won't require any CSS changes. (And if we have a [pattern](http://ux.mailchimp.com/patterns) [library](http://alistapart.com/blog/post/getting-started-with-pattern-libraries), such a change will be as simple as copy-and-pasting some [markup](http://patterns.alistapart.com/).)
 
+Note also that if we wish to completely avoid Module file load-order specificity bugs and/or we need to load multiple CSS files asynchronously, `PopupDialog-closeBtn` shouldn't subclass `.Btn`, but instead [wrap it inside of another `<div>`](https://github.com/gilbox/futuristic-sass-guide/blob/master/solving-complexity.md#6-non-deterministic-resolution).
+
 ## Alternate approach using Module Modifier
 
 [`[ pen ]`](http://codepen.io/gilbox/pen/LbKml?editors=010)
