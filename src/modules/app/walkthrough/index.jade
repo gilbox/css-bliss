@@ -1,0 +1,308 @@
+section
+  :markdown
+
+    # FSG Walkthrough
+
+    Welcome! Throughout this walkthrough the [futuristic-sass-guide](https://github.com/gilbox/futuristic-sass-guide)
+    is referred to as the **FSG**.
+    This purpose of this walkthrough is to present the FSG in a more natural way. If the FSG is
+    the technical manual, then this is the study guide.
+
+section
+  :markdown
+
+    # Subclassing
+
+    The term **subclassing** is used several times throughout the FSG. This is a very
+    important concept because subclassing is often better than using `@extend` or `@mixin`.
+    When `.A` and `.B` are applied to the same element `<div class="A B">`,
+    we say that `.B` **subclasses** `.A` **if `.B` appears after `.A` in the stylesheet**
+    (and thus will override or augment rules in `.A`)
+
+questions.Questions--3
+  question
+    :markdown
+      ``` css
+        .A {
+         color: red;
+         border: 1px solid green;
+        }
+
+        .B {
+         color: blue;
+        }
+      ```
+
+      ``` html
+        <h2 class="A B">
+          Hello World
+        </h2>
+      ```
+    answer-toggle-group
+      answer-toggle(correct="false") <code>A</code> subclasses <code>B</code>
+      answer-toggle(correct="true") <code>B</code> subclasses <code>A</code>
+      answer-toggle(correct="false") Both <code>A</code> subclasses <code>B</code>, and <code>B</code> subclasses <code>A</code>
+
+  question
+    :markdown
+      ``` css
+        .B {
+         font-size: 20px;
+        }
+        .A {
+         color: orange;
+        }
+      ```
+      ``` html
+        <h2 class="A B">
+          Hello World
+        </h2>
+      ```
+    answer-toggle-group
+      answer-toggle(correct="true") <code>A</code> subclasses <code>B</code>
+      answer-toggle(correct="false") <code>B</code> subclasses <code>A</code>
+      answer-toggle(correct="false") Both <code>A</code> subclasses <code>B</code>, and <code>B</code> subclasses <code>A</code>
+
+  question
+    :markdown
+      ``` css
+        .A { ... }
+        .B { ... }
+        .C { ... }
+      ```
+      ``` html
+        <h2 class="C B A">
+          Hello World
+        </h2>
+      ```
+    answer-toggle-group
+      answer-toggle(correct="false") <code>A</code> subclasses <code>B</code>
+      answer-toggle(correct="true") <code>B</code> subclasses <code>A</code>
+      answer-toggle(correct="false") <code>B</code> subclasses <code>C</code>
+      answer-toggle(correct="true") <code>C</code> subclasses <code>A</code>
+      answer-toggle(correct="true") <code>C</code> subclasses both <code>B</code> <strong>and</strong> <code>A</code>
+
+section
+  :markdown
+
+    # Creating a new Module
+
+    Whenever we need to add new styles to a page, our first instinct should be to
+    create a new **Module** or to augment an existing Module.
+
+    Module class names are **.TitleCase** and should reside inside of a SASS partial
+    named after the Module. Module files (partials) live inside the `modules/` folder.
+    For example, a `.DialogBox` Module should be defined inside of `modules/_DialogBox.scss`.
+
+    All classes names inside of a Module file must be namespaced by
+    the Module name. A class is namespaced with the module name followed by dash (ie `.DialogBox-`).
+    The only exception to this are state classes, which are classes which are never
+    namespaced and begin with `.is`
+
+questions.Questions--3
+  question
+    :markdown
+      ``` css
+        .FunBox {
+          width:100%;
+        }
+
+        .FunBox-btn {
+          border: 5px solid green;
+          white-space: nowrap;
+        }
+
+        .isActive.FunBox-btn {
+          color: red;
+        }
+      ```
+    answer-toggle-group
+      answer-toggle(correct="true") Is this a valid Module File?
+
+  question
+    :markdown
+      ``` css
+        .SearchBox {
+          border: 1px solid black;
+        }
+
+        .SearchBox-closeBtn {
+          background: black;
+          color:white;
+        }
+
+        .SearchButton {
+          text-decoration: none;
+        }
+      ```
+    answer-toggle-group
+      answer-toggle(correct="false") Is this a valid Module File?
+
+  question
+    h4 Which of the following are valid Module Names?
+    answer-toggle-group
+      answer-toggle(correct="true") Btn
+      answer-toggle(correct="false") SearchBox-closeBtn
+      answer-toggle(correct="false") jokeBox
+      answer-toggle(correct="true") DialogBoxBtn
+      answer-toggle(correct="false") HeaderWidget-Lower
+      answer-toggle(correct="false") Promo_Banner
+
+section
+  :markdown
+
+    # Adding Rules to Modules
+
+    Any time we need to add a style rule to a Module, our first instinct
+    should be to add a **Module Element** class to the module. For example,
+    if we have a Module `.Btn` and need to style an image icon within the button
+    then we create the class `.Btn-imageIcon`. Note how `imageIcon` is camelCase and is namespaced by
+    the Module, `.Btn-`.
+
+    Here's what our button looks like in code:
+
+    ``` css
+    .Btn {
+      border: 2px solid grey;
+      background: red;
+    }
+
+    .Btn-imageIcon {
+      position:inline-block:
+      height: 15px;
+    }
+    ```
+
+    ``` html
+    <button class="Btn">
+      Click Me <span class="Btn-imageIcon"></span>
+    </button>
+    ```
+
+questions.Questions--2
+  question
+    h4 Which are valid Module Element classes?
+    answer-toggle-group
+      answer-toggle(correct="false") .Btn-vector-icon
+      answer-toggle(correct="false") .Btn-Middle
+      answer-toggle(correct="true") .Btn-iconTopLeft
+      answer-toggle(correct="false") .Btn-icon--small
+      answer-toggle(correct="false") .btnIcon
+      answer-toggle(correct="true") .Btn-littleLebowskiUrbanAchievers
+
+  question
+    :markdown
+      ``` css
+        .SearchBox {
+          border: 1px solid black;
+        }
+        .SearchBox-closeBtn {
+          background: black;
+          color:white;
+        }
+        .SearchBox-expandBtn {
+          background: blue;
+        }
+      ```
+    answer-toggle-group
+      answer-toggle(correct="false") <code>.SearchBox</code> is a Module Element
+      answer-toggle(correct="true") <code>.SearchBox-closeBtn</code> is a Module Element
+      answer-toggle(correct="true") <code>.SearchBox-expandBtn</code> is a Module Element
+
+section
+  :markdown
+    # Modifying Module Elements
+
+    Now, consider that our designer comes along and hands us a new requirement
+    for a new button. This new button is very similar to our existing button
+    with it's icon, except that this new button has a *bigger* icon. One way to
+    create this new style is with a **Module Element Modifier**.
+
+    ``` html
+    <button class="Btn">
+      Click Me <span class="Btn-imageIcon Btn-imageIcon--bigger"></span>
+    </button>
+    ```
+
+    In the markup above, `.Btn-imageIcon--bigger` is our new **Module Element Modifier**.
+    Note that this new Modifier **subclasses** our original **Module Element**
+    `Btn-imageIcon`.
+
+    Modifiers **always** follow these two rules:
+
+    1. Modifiers always subclass another class
+    2. Modifiers are always named after the class which they subclass with the addition
+       of 2 dashes, followed by a camelcased name
+
+    Modifiers are also unique because **we may apply multiple Modifiers to one DOM element**.
+    In contrast, we are **not** allowed to apply multiple Module or Module Element classes
+    to the same DOM element.
+
+questions.Questions--3
+  question
+    :markdown
+      ``` css
+        .DialogBox {
+          border: 1px solid black;
+        }
+
+        .DialogBox-closeBtn--bigger {
+          height: 30px;
+        }
+
+        .DialogBox-closeBtn {
+          background: black;
+          color:white;
+          height: 30px;
+        }
+
+        .DialogBox-expandBtn {
+          background: blue;
+        }
+
+        .DialogBox-expandBtn--bigger {
+          background: blue;
+        }
+      ```
+    answer-toggle-group
+      answer-toggle(correct="false") <code>.DialogBox-closeBtn--bigger</code> is ordered correctly in the CSS file
+      answer-toggle(correct="true") <code>.DialogBox-expandBtn--bigger</code> is ordered correctly in the CSS file
+
+  question
+    h4 Which are valid Module Modifier classes?
+    answer-toggle-group
+      answer-toggle(correct="false") .Btn--smaller
+      answer-toggle(correct="true") .Btn-iconTop--smaller
+      answer-toggle(correct="false") .DialogBox--fun-pullRight
+      answer-toggle(correct="true") .DialogBox-iconTopLeft--pushLeft
+      answer-toggle(correct="false") .SmallText-mini-evenSmaller
+      answer-toggle(correct="true") .Btn-littleLebowskiUrbanAchievers--width100pct
+
+  question
+    h4 Which are valid usages of Modifier classes?
+    answer-toggle-group
+      answer-toggle(correct="false")
+        :markdown
+          ```
+          <button class="Btn">
+            Click Me
+            <span class="Btn-iconImage--bigger"></span>
+          </button>
+          ```
+      answer-toggle(correct="true")
+        :markdown
+          ```
+          <div class="SearchBox">
+            <b class="SearchBox-title
+                      SearchBox-title--bigger"></b>
+          </div>
+          ```
+      answer-toggle(correct="false")
+        :markdown
+          ```
+          <button class="Btn">
+            Click Me
+            <span class="Btn-iconImage
+                         Btn-icon--bigger"></span>
+          </button>
+          ```

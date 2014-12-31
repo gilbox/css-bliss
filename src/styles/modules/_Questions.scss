@@ -1,0 +1,44 @@
+.Questions {
+  width: 100%;
+  display: table;
+  border-spacing: 10px;
+//  @include clearfix;
+  background: #eee;
+//  padding: 10px 0;
+}
+
+.Questions--2 {
+  .Questions-q {
+    width: 50%;
+  }
+}
+.Questions--3 {
+  .Questions-q {
+    width: 33.3%;
+  }
+}
+
+.Questions--4 {
+  .Questions-q {
+    width: 25%;
+  }
+}
+
+.Questions--5 {
+  .Questions-q {
+    width: 20%;
+  }
+}
+
+.Questions-q {
+  display: table-cell;
+  border-radius: 10px;
+  background-color: white;
+  //  box-shadow: 10px 10px 20px 0 rgba(0, 0, 0, 0.3), 0px 0px 20px 0 rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  opacity: 0.4;
+
+  &:hover {
+    opacity:1;
+  }
+}

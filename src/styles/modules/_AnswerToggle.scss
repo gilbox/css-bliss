@@ -1,0 +1,64 @@
+.AnswerToggle {
+  position: relative;
+  display: block;
+  border-top: 2px solid white;
+  padding: 0 0 0 20px;
+  font-weight: bold;
+  background: rgba(0,0,0,0.05);
+  line-height: 2;
+
+  &:hover {
+    background: lightyellow;
+  }
+}
+
+.AnswerToggle-buttons {
+//  float: right;
+  position: absolute;
+  top:-1px;
+  right:0;
+  bottom:0;
+}
+
+.AnswerToggle.isOn {
+  background: orange;
+  color: white;
+}
+
+.AnswerToggle.isWrong {
+  background: red;
+  color: white;
+}
+
+.AnswerToggle.isRight {
+  background: green;
+  color: white;
+}
+
+.AnswerToggle-btn {
+  height: 100%;
+  display: inline-block;
+//  border: 1px solid rgba(0,0,0,0.5);
+  background: rgba(255,255,255,0.5);
+  border:0;
+  border-left: 2px solid white;
+  outline:0;
+  cursor: pointer;
+  padding: 0 10px;
+}
+
+.AnswerToggle-btn.isOn {
+  background: lightblue;
+}
+
+.AnswerToggle-answer {
+  display: inline-block;
+  max-width: calc(100% - 80px);
+
+  & pre {
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+    color: black !important;
+  }
+}

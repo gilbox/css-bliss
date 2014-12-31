@@ -1,0 +1,8 @@
+{
+  "name": "futuristic sass guide",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.2.21",
+    "angular-route": "~1.2.21"
+  }
+}
