@@ -27,6 +27,10 @@ If you have questions, comments, or suggestions please [open an Issue](https://g
 
 ----
 
+There is now a [**Walkthrough**](http://gilbox.github.io/futuristic-sass-guide/release/) (still a Work in Progress)
+
+----
+
 # General
 
 - Use class selectors instead of element or attr selectors in most cases.
