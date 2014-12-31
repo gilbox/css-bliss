@@ -226,7 +226,23 @@ section
 
     In the markup above, `.Btn-imageIcon--bigger` is our new **Module Element Modifier**.
     Note that this new Modifier **subclasses** our original **Module Element**
-    `Btn-imageIcon`.
+    `Btn-imageIcon`. Here's what the updated stylesheet looks like:
+
+    ``` css
+    .Btn {
+      border: 2px solid grey;
+      background: red;
+    }
+
+    .Btn-imageIcon {
+      position:inline-block:
+      height: 15px;
+    }
+
+    .Btn-imageIcon--bigger {
+      height: 30px;
+    }
+    ```
 
     Modifiers **always** follow these two rules:
 
@@ -237,6 +253,39 @@ section
     Modifiers are also unique because **we may apply multiple Modifiers to one DOM element**.
     In contrast, we are **not** allowed to apply multiple Module or Module Element classes
     to the same DOM element.
+
+    # Modifying Modules
+
+    As an alternative to using **Element Modifiers**, we can create variations of existing styles
+    using **Module Modifiers**. Consider again the same scenario presented above where
+    a design change calls for a new button. Here's what the new markup will look like
+    if we use a Module Modifier instead of an Element Modifier:
+
+    ``` html
+    <button class="Btn Btn--bigger">
+      Click Me <span class="Btn-imageIcon"></span>
+    </button>
+    ```
+
+    To create a syling rule for our Module Modifier, this is one of the few times when
+    the FSG recommends using a
+    [**descendant selector**](http://www.w3.org/TR/CSS21/selector.html#descendant-selectors):
+
+    ``` css
+    .Btn {
+      border: 2px solid grey;
+      background: red;
+    }
+
+    .Btn-imageIcon {
+      position:inline-block:
+      height: 15px;
+    }
+
+    .Btn--bigger .Btn-imageIcon { /* this is a descendant selector */
+      height: 30px;
+    }
+    ```
 
 questions.Questions--3
   question
@@ -269,7 +318,7 @@ questions.Questions--3
       answer-toggle(correct="true") <code>.DialogBox-expandBtn--bigger</code> is ordered correctly in the CSS file
 
   question
-    h4 Which are valid Module Modifier classes?
+    h4 Which are valid <em>Element</em> Modifier classes?
     answer-toggle-group
       answer-toggle(correct="false") .Btn--smaller
       answer-toggle(correct="true") .Btn-iconTop--smaller
@@ -278,9 +327,26 @@ questions.Questions--3
       answer-toggle(correct="false") .SmallText-mini-evenSmaller
       answer-toggle(correct="true") .Btn-littleLebowskiUrbanAchievers--width100pct
 
+    h4 Which are valid <em>Module</em> Modifier classes?
+    answer-toggle-group
+      answer-toggle(correct="true") .Btn--smaller
+      answer-toggle(correct="false") .Btn-littleLebowskiUrbanAchievers--width100pct
+      answer-toggle(correct="false") .Btn-------bigger
+      answer-toggle(correct="false") .DialogBox-iconTopLeft
+      answer-toggle(correct="false") .SmallText--mini-evenSmaller
+      answer-toggle(correct="true") .DialogBox--funAndColorful
+
   question
     h4 Which are valid usages of Modifier classes?
     answer-toggle-group
+      answer-toggle(correct="true")
+        :markdown
+          ```
+          <button class="Btn Btn--big Btn--colorfulAndSquiggily">
+            Click Me
+            <span class="Btn-iconImage Btn-iconImage--bigger"></span>
+          </button>
+          ```
       answer-toggle(correct="false")
         :markdown
           ```
@@ -304,5 +370,13 @@ questions.Questions--3
             Click Me
             <span class="Btn-iconImage
                          Btn-icon--bigger"></span>
+          </button>
+          ```
+      answer-toggle(correct="false")
+        :markdown
+          ```
+          <button class="Btn--bigger">
+            Click Me
+            <span class="Btn-iconImage"></span>
           </button>
           ```
