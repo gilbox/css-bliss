@@ -62,3 +62,41 @@
     color: black !important;
   }
 }
+
+.isAnswerYes.isRight {
+  .AnswerToggle-btn--yes {
+    background-color: green;
+  }
+  .AnswerToggle-btn--no {
+    background-color: lightgrey;
+  }
+}
+
+.isAnswerYes.isWrong {
+  .AnswerToggle-btn--yes {
+    background-color: lightgrey;
+    color:green;
+  }
+  .AnswerToggle-btn--no {
+    background-color: red;
+  }
+}
+
+.isAnswerNo.isRight {
+  .AnswerToggle-btn--yes {
+    background-color: lightgrey;
+  }
+  .AnswerToggle-btn--no {
+    background-color: green;
+  }
+}
+
+.isAnswerNo.isWrong {
+  .AnswerToggle-btn--yes {
+    background-color: red;
+  }
+  .AnswerToggle-btn--no {
+    background-color: lightgrey;
+    color:green;
+  }
+}

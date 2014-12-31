@@ -657,4 +657,26 @@ section {
     margin-top: 10px;
     color: black !important; }
 
+.isAnswerYes.isRight .AnswerToggle-btn--yes {
+  background-color: green; }
+.isAnswerYes.isRight .AnswerToggle-btn--no {
+  background-color: lightgrey; }
+
+.isAnswerYes.isWrong .AnswerToggle-btn--yes {
+  background-color: lightgrey;
+  color: green; }
+.isAnswerYes.isWrong .AnswerToggle-btn--no {
+  background-color: red; }
+
+.isAnswerNo.isRight .AnswerToggle-btn--yes {
+  background-color: lightgrey; }
+.isAnswerNo.isRight .AnswerToggle-btn--no {
+  background-color: green; }
+
+.isAnswerNo.isWrong .AnswerToggle-btn--yes {
+  background-color: red; }
+.isAnswerNo.isWrong .AnswerToggle-btn--no {
+  background-color: lightgrey;
+  color: green; }
+
 /*# sourceMappingURL=app.css.map */

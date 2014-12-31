@@ -9,7 +9,7 @@ module.exports = /*@ngInject*/
       },
       transclude: true,
       link: function (scope, element) {
-        var statementIsTrue = scope.correct === 'true' || scope.correct === true;
+        var statementIsTrue = scope.isAnswerYes = (scope.correct === 'true' || scope.correct === true);
 
         scope.isWrong = false;
         scope.isRight = false;
@@ -38,7 +38,7 @@ module.exports = /*@ngInject*/
           check();
         };
       },
-      template: '<div class="AnswerToggle" ng-class="{isWrong:isWrong, isRight:isRight, isOn:isOn}" ng-click="click()">' +
+      template: '<div class="AnswerToggle" ng-class="{isAnswerYes:isAnswerYes, isAnswerNo:!isAnswerYes, isWrong:isWrong, isRight:isRight, isOn:isOn}" ng-click="click()">' +
                   '<span class="AnswerToggle-answer" ng-transclude></span>' +
                   '<span class="AnswerToggle-buttons">' +
                     '<button ng-click="clickYes()" class="AnswerToggle-btn AnswerToggle-btn--yes" ng-class="{isOn:yesOn}">YES</button>' +
