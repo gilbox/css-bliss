@@ -62,7 +62,7 @@ TitleCase [Modules](#module), camelCase [Elements](#element). why-not-dashes ? B
       ...
     }
     
-    .MyModule.is-state {
+    .MyModule.isState {
       ...
     }
     
@@ -109,9 +109,9 @@ TitleCase [Modules](#module), camelCase [Elements](#element). why-not-dashes ? B
 
 ## State
 
-- `.is-camelCase`
+- `.isCamelCase` (formerly `.is-camelCase`)
 - Often, but not necessarily used in conjunction with JavaScript
-- **No** style except in context with another rule. For example: `.MyModule.is-state`, `.MyModule-myElement.is-state`, `.MyModule-myElement--myModifier.is-state`, `.is-state .MyModule-myElement`, etc.
+- **No** style except in context with another rule. For example: `.MyModule.isState`, `.MyModule-myElement.isState`, `.MyModule-myElement--myModifier.isState`, `.isState .MyModule-myElement`, etc.
 
 ## Simple Rules (aka Utility Classes)
 
@@ -127,7 +127,7 @@ Modules promote strict encapsulation. We achieve encapsulation thusly:
 - No module may ever effect any other module by creating a selector that
   reaches inside of another module.
 - **All** classes inside of a module file are namespaced by the module's name
-  (with the notable exception of state (`.is-`) classes)
+  (with the notable exception of state (`.is`) classes)
 - To achieve the strictest form of encapsulation,
   no DOM element should ever be assigned module-namespaced classes from more than one module.
 
