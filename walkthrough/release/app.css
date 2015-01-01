@@ -604,6 +604,16 @@ section {
   .Questions-q:hover {
     opacity: 1; }
 
+@media (max-width: 1200px) {
+  .Questions {
+    display: block;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto; }
+
+  .Questions-q.Questions-q.Questions-q {
+    display: block;
+    width: 100%; } }
 .AnswerToggleGroup {
   display: block; }
 
