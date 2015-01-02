@@ -1,7 +1,7 @@
-futuristic-sass-guide
-=====================
+CSS Bliss
+=========
 
-My futuristic thoughts on structuring a SASS project. Ideas all stolen from [BEM](http://bem.info), [SMACSS](https://smacss.com/), [OOCSS](http://oocss.org/), [SUITECSS](https://github.com/suitcss). 
+A CSS style guide for small to enormous projects, without all that pomp and cruft. Many ideas borrowed from [BEM](http://bem.info), [SMACSS](https://smacss.com/), [OOCSS](http://oocss.org/), [SUITECSS](https://github.com/suitcss). This style guide uses SCSS. However, for any sized project, the only features that are really beneficial in a CSS preprocessor are **variables** and **mixins**. Therefore, this guide will be useful for any preprocessor or no preprocessor at all as there is very little focus on features that aren't already part of vanilla CSS.
 
 - [General](#general)
 - [Naming](#naming)
@@ -23,11 +23,11 @@ My futuristic thoughts on structuring a SASS project. Ideas all stolen from [BEM
 
 ----
 
-If you have questions, comments, or suggestions please [open an Issue](https://github.com/gilbox/futuristic-sass-guide/issues). And of course, [PRs](https://github.com/gilbox/futuristic-sass-guide/pulls) are welcome.
+If you have questions, comments, or suggestions please [open an Issue](https://github.com/gilbox/css-bliss/issues). And of course, [PRs](https://github.com/gilbox/css-bliss/pulls) are welcome.
 
 ----
 
-There is now a [**Walkthrough**](http://gilbox.github.io/futuristic-sass-guide/walkthrough/release/). If you have never used BEM, SMACSS, or similar, reading the Walkthrough is highly recommended.
+There is now a [**Walkthrough**](http://gilbox.github.io/css-bliss/walkthrough/release/). If you have never used BEM, SMACSS, or similar, reading the Walkthrough is highly recommended.
 
 ----
 
@@ -307,7 +307,7 @@ Here we subclass `.Btn` with `.PopupDialog-closeBtn`:
 
 Note that the above approach is extremely flexibile. If we want to swap out the `Btn` module for a different button module, it won't require any CSS changes. (And if we have a [pattern](http://ux.mailchimp.com/patterns) [library](http://alistapart.com/blog/post/getting-started-with-pattern-libraries), such a change will be as simple as copy-and-pasting some [markup](http://patterns.alistapart.com/).)
 
-Note also that if we wish to completely avoid Module file load-order specificity bugs and/or we need to load multiple CSS files asynchronously, `PopupDialog-closeBtn` shouldn't subclass `.Btn`, but instead [wrap it inside of another `<div>`](https://github.com/gilbox/futuristic-sass-guide/blob/master/solving-complexity.md#6-non-deterministic-resolution).
+Note also that if we wish to completely avoid Module file load-order specificity bugs and/or we need to load multiple CSS files asynchronously, `PopupDialog-closeBtn` shouldn't subclass `.Btn`, but instead [wrap it inside of another `<div>`](https://github.com/gilbox/css-bliss/blob/master/solving-complexity.md#6-non-deterministic-resolution).
 
 ## Alternate approach using Module Modifier
 
@@ -358,7 +358,7 @@ This tool does not exist, but it would be cool if it did.
 
 # Solving Complexity
 
-[solving-complexity.md](https://github.com/gilbox/futuristic-sass-guide/blob/master/solving-complexity.md)
+[solving-complexity.md](https://github.com/gilbox/css-bliss/blob/master/solving-complexity.md)
 is another document in this repo inspired by the challenges identified
 by Facebook's [vjeux](https://speakerdeck.com/vjeux).
 solving-complexity presents some additional guidelines, which, when applied
