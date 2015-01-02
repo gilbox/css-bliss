@@ -1,7 +1,7 @@
 CSS Bliss
 =========
 
-A CSS style guide for small to enormous projects, without all that pomp and cruft. Many ideas borrowed from [BEM](http://bem.info), [SMACSS](https://smacss.com/), [OOCSS](http://oocss.org/), [SUITECSS](https://github.com/suitcss). This style guide uses SCSS. However, the only truly beneficial preprocessor-specific features we discuss are **variables** and **mixins**. Therefore, this guide will be useful for any preprocessor or no preprocessor at all as there is very little focus on features that aren't already part of vanilla CSS.
+A CSS style guide for small to enormous projects, without all that pomp and cruft. Many ideas borrowed from [BEM](http://bem.info), [SMACSS](https://smacss.com/), [OOCSS](http://oocss.org/), [SUITECSS](https://github.com/suitcss). This style guide uses SCSS. However, the only truly beneficial preprocessor-specific features we discuss are [**variables**, **mixins**, and **partials**](http://sass-lang.com/guide). Therefore, this guide will be useful for any preprocessor or no preprocessor at all as there is very little focus on features that aren't already part of vanilla CSS.
 
 ---
 There is now a [**Walkthrough**](http://gilbox.github.io/css-bliss/walkthrough/release/). If you have never used BEM, SMACSS, or similar, reading the Walkthrough is highly recommended.
