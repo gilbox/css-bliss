@@ -1,0 +1,73 @@
+section
+  :markdown
+
+    # Subclassing
+
+    The term **subclassing** is used several times throughout the FSG. This is a very
+    important concept because subclassing is often better than using `@extend` or `@mixin`.
+    When `.A` and `.B` are applied to the same element `<div class="A B">`,
+    we say that `.B` **subclasses** `.A` **if `.B` appears after `.A` in the stylesheet**
+    (and thus will override or augment rules in `.A`)
+
+questions.Questions--3
+  question
+    :markdown
+      ``` css
+        .A {
+         color: red;
+         border: 1px solid green;
+        }
+
+        .B {
+         color: blue;
+        }
+      ```
+
+      ``` html
+        <h2 class="A B">
+          Hello World
+        </h2>
+      ```
+    answer-toggle-group
+      answer-toggle(correct="false") <code>A</code> subclasses <code>B</code>
+      answer-toggle(correct="true") <code>B</code> subclasses <code>A</code>
+      answer-toggle(correct="false") Both <code>A</code> subclasses <code>B</code>, and <code>B</code> subclasses <code>A</code>
+
+  question
+    :markdown
+      ``` css
+        .B {
+         font-size: 20px;
+        }
+        .A {
+         color: orange;
+        }
+      ```
+      ``` html
+        <h2 class="A B">
+          Hello World
+        </h2>
+      ```
+    answer-toggle-group
+      answer-toggle(correct="true") <code>A</code> subclasses <code>B</code>
+      answer-toggle(correct="false") <code>B</code> subclasses <code>A</code>
+      answer-toggle(correct="false") Both <code>A</code> subclasses <code>B</code>, and <code>B</code> subclasses <code>A</code>
+
+  question
+    :markdown
+      ``` css
+        .A { ... }
+        .B { ... }
+        .C { ... }
+      ```
+      ``` html
+        <h2 class="C B A">
+          Hello World
+        </h2>
+      ```
+    answer-toggle-group
+      answer-toggle(correct="false") <code>A</code> subclasses <code>B</code>
+      answer-toggle(correct="true") <code>B</code> subclasses <code>A</code>
+      answer-toggle(correct="false") <code>B</code> subclasses <code>C</code>
+      answer-toggle(correct="true") <code>C</code> subclasses <code>A</code>
+      answer-toggle(correct="true") <code>C</code> subclasses both <code>B</code> <strong>and</strong> <code>A</code>

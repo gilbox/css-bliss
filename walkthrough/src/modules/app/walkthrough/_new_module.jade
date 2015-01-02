@@ -1,0 +1,65 @@
+section
+  :markdown
+
+    # Creating a new Module
+
+    Whenever we need to add new styles to a page, our first instinct should be to
+    create a new **Module** or to augment an existing Module.
+
+    Module class names are **.TitleCase** and should reside inside of a SASS partial
+    named after the Module. Module files (partials) live inside the `modules/` folder.
+    For example, a `.DialogBox` Module should be defined inside of `modules/_DialogBox.scss`.
+
+    All classes names inside of a Module file must be namespaced by
+    the Module name. A class is namespaced with the module name followed by dash (ie `.DialogBox-`).
+    The only exception to this are state classes, which are classes which are never
+    namespaced and begin with `.is`
+
+questions.Questions--3
+  question
+    :markdown
+      ``` css
+        .FunBox {
+          width:100%;
+        }
+
+        .FunBox-btn {
+          border: 5px solid green;
+          white-space: nowrap;
+        }
+
+        .isActive.FunBox-btn {
+          color: red;
+        }
+      ```
+    answer-toggle-group
+      answer-toggle(correct="true") Is this a valid Module File?
+
+  question
+    :markdown
+      ``` css
+        .SearchBox {
+          border: 1px solid black;
+        }
+
+        .SearchBox-closeBtn {
+          background: black;
+          color:white;
+        }
+
+        .SearchButton {
+          text-decoration: none;
+        }
+      ```
+    answer-toggle-group
+      answer-toggle(correct="false") Is this a valid Module File?
+
+  question
+    h5 Which of the following are valid Module Names?
+    answer-toggle-group
+      answer-toggle(correct="true") <code>Btn</code>
+      answer-toggle(correct="false") <code>SearchBox-closeBtn</code>
+      answer-toggle(correct="false") <code>jokeBox</code>
+      answer-toggle(correct="true") <code>DialogBoxBtn</code>
+      answer-toggle(correct="false") <code>HeaderWidget-Lower</code>
+      answer-toggle(correct="false") <code>Promo_Banner</code>

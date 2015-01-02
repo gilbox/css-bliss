@@ -1,0 +1,157 @@
+section
+  :markdown
+    # Programmatically toggling styles with JavaScript
+
+    Our favorite way to effect styling with JavaScript is to add and remove
+    classes. It is a simple, yet extremely powerful way of dynamically changing
+    styles and/or triggering animation in response to user interaction.
+
+    The FSG lets us toggle classes in two ways:
+
+    1. By toggling Modifier classes
+    2. By toggling State (`.is`) classes
+
+    # State Classes (**`.is`**)
+
+    State class names are camelCased class names that begin with `.is`.
+    These classes are special because:
+
+    - State classes are the only type of class that
+      we can use in a Module file which are *not* namespaced by the Module name.
+    - State classes may not have styles on their own.
+
+    > **Note** that a state class may **not** be the final descendent/child in a
+    selector (for example: `.Btn-iconImage .isActive { ... }`)
+    because we consider this to be giving the State class a style
+    of it's own.
+
+
+    # Toggling styles with JavaScript: done 2 ways
+
+    There is no simple answer regarding which type of class (Modifier or Sate) should be used to
+    toggle styling. Instead, we should consider both options for each particular use-case
+    and choose the one that seems the most intuitive.
+
+    Consider, for example, that our design calls for several widgets that are styled one way
+    for users whom aren't logged in, and styled another way for users whom are logged in.
+    What follows are the two different approaches to accomplish this objective,
+    implemented in AngularJS.
+
+    ## Approach #1: Toggling Modifier classes
+
+    ``` html
+    <body>
+      <div class="Header" ng-class={'Header--loggedIn':userIsLoggedIn}">...</div>
+      <div class="Hero" ng-class={'Hero--loggedIn':userIsLoggedIn}">...</div>
+      <div class="FeatureGrid" ng-class={'FeatureGrid--loggedIn':userIsLoggedIn}">...</div>
+    </body>
+    ```
+
+    ``` css
+    /* modules/_Header.scss */
+    .Header {
+      ...
+    }
+    .Header--loggedIn {
+      ...
+    }
+
+    /* modules/_Hero.scss */
+    .Hero {
+      ...
+    }
+    .Hero--loggedIn {
+      ...
+    }
+
+    /* modules/_FeatureGrid.scss */
+    .FeatureGrid {
+      ...
+    }
+    .FeatureGrid--loggedIn {
+      ...
+    }
+    ```
+
+    > **Note** that in this first approach we are exclusively using Module Modifiers,
+    however it is possible to use Element Modifiers instead or as well.
+
+    ## Approach #2: Toggling State (`.is`) classes
+
+    ``` html
+    <body ng-class="{isLoggedIn:userIsLoggedIn}">
+      <div class="Header">...</div>
+      <div class="Hero">...</div>
+      <div class="FeatureGrid">...</div>
+    </body>
+    ```
+
+    ``` css
+    /* modules/_Header.scss */
+    .Header {
+      ...
+    }
+    .isLoggedIn.Header {
+      ...
+    }
+
+    /* modules/_Hero.scss */
+    .Hero {
+      ...
+    }
+    .isLoggedIn.Hero {
+      ...
+    }
+
+    /* modules/_FeatureGrid.scss */
+    .FeatureGrid {
+      ...
+    }
+    .isLoggedIn.FeatureGrid {
+      ...
+    }
+    ```
+
+
+questions.Questions--2
+  question
+    h5 Which selectors are allowed?
+    answer-toggle-group
+      answer-toggle(correct="true")
+        :markdown
+          ```
+          .isLoggedIn.Btn-imageIcon {
+            background: red;
+          }
+          ```
+      answer-toggle(correct="false")
+        :markdown
+          ```
+          Btn-imageIcon > .isLoggedIn {
+            background: red;
+          }
+          ```
+      answer-toggle(correct="true")
+        :markdown
+          ```
+          .SearchForm.isSuperUser {
+            font-size:10px;
+            color: blue
+          }
+          ```
+      answer-toggle(correct="false")
+        :markdown
+          ```
+          .SearchForm .isSuperUser.Btn {
+            font-size:10px;
+            color: blue
+          }
+          ```
+  question
+    h5 Valid State class name?
+    answer-toggle-group
+      answer-toggle(correct="true") <code>.isUserLoggedIn</code>
+      answer-toggle(correct="false") <code>.isUser-loggedIn</code>
+      answer-toggle(correct="false") <code>.userIsLoggedIn</code>
+      answer-toggle(correct="true") <code>.isOK</code>
+      answer-toggle(correct="false") <code>.IsFormValid</code>

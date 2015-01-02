@@ -1,0 +1,60 @@
+section
+  :markdown
+
+    # Adding Rules to Modules
+
+    Any time we need to add a style rule to a Module, our first instinct
+    should be to add a **Module Element** class to the module. For example,
+    if we have a Module `.Btn` and need to style an image icon within the button
+    then we create the class `.Btn-imageIcon`. Note how `imageIcon` is camelCase and is namespaced by
+    the Module, `.Btn-`.
+
+    Here's what our button looks like in code:
+
+    ``` css
+    .Btn {
+      border: 2px solid grey;
+      background: red;
+    }
+
+    .Btn-imageIcon {
+      position:inline-block:
+      height: 15px;
+    }
+    ```
+
+    ``` html
+    <button class="Btn">
+      Click Me <span class="Btn-imageIcon"></span>
+    </button>
+    ```
+
+questions.Questions--2
+  question
+    h5 Which are valid Module Element classes?
+    answer-toggle-group
+      answer-toggle(correct="false") <code>.Btn-vector-icon</code>
+      answer-toggle(correct="false") <code>.Btn-Middle</code>
+      answer-toggle(correct="true") <code>.Btn-iconTopLeft</code>
+      answer-toggle(correct="false") <code>.Btn-icon--small</code>
+      answer-toggle(correct="false") <code>.btnIcon</code>
+      answer-toggle(correct="true") <code>.Btn-littleLebowskiUrbanAchievers</code>
+
+  question
+    :markdown
+      ``` css
+        .SearchBox {
+          border: 1px solid black;
+        }
+        .SearchBox-closeBtn {
+          background: black;
+          color:white;
+        }
+        .SearchBox-expandBtn {
+          background: blue;
+        }
+      ```
+    answer-toggle-group
+      answer-toggle(correct="false") <code>.SearchBox</code> is a Module Element
+      answer-toggle(correct="true") <code>.SearchBox-closeBtn</code> is a Module Element
+      answer-toggle(correct="true") <code>.SearchBox-expandBtn</code> is a Module Element

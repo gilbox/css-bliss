@@ -1,0 +1,171 @@
+section
+  :markdown
+    # Modifying Module Elements
+
+    Now, consider that our designer comes along and hands us a new requirement
+    for a new button. This new button is very similar to our existing button
+    with it's icon, except that this new button has a *bigger* icon. One way to
+    create this new style is with a **Module Element Modifier**.
+
+    ``` html
+    <button class="Btn">
+      Click Me <span class="Btn-imageIcon Btn-imageIcon--bigger"></span>
+    </button>
+    ```
+
+    In the markup above, `.Btn-imageIcon--bigger` is our new **Module Element Modifier**.
+    Note that this new Modifier **subclasses** our original **Module Element**
+    `Btn-imageIcon`. Here's what the updated stylesheet looks like:
+
+    ``` css
+    .Btn {
+      border: 2px solid grey;
+      background: red;
+    }
+
+    .Btn-imageIcon {
+      position:inline-block:
+      height: 15px;
+    }
+
+    .Btn-imageIcon--bigger {
+      height: 30px;
+    }
+    ```
+
+    Modifiers **always** follow these two rules:
+
+    1. Modifiers always subclass another class
+    2. Modifiers are always named after the class which they subclass with the addition
+       of 2 dashes, followed by a camelCased name
+
+    Modifiers are also unique because **we may apply multiple Modifiers to one DOM element**.
+    In contrast, we are **not** allowed to apply multiple Module or Module Element classes
+    to the same DOM element.
+
+    # Modifying Modules
+
+    As an alternative to using **Element Modifiers**, we can create variations of existing styles
+    using **Module Modifiers**. Consider again the same scenario presented above where
+    a design change calls for a new button. Here's what the new markup will look like
+    if we use a Module Modifier instead of an Element Modifier:
+
+    ``` html
+    <button class="Btn Btn--bigger">
+      Click Me <span class="Btn-imageIcon"></span>
+    </button>
+    ```
+
+    To create a styling rule for our Module Modifier, this is one of the few times when
+    the FSG recommends using a
+    [**descendant selector**](http://www.w3.org/TR/CSS21/selector.html#descendant-selectors):
+
+    ``` css
+    .Btn {
+      border: 2px solid grey;
+      background: red;
+    }
+
+    .Btn-imageIcon {
+      position:inline-block:
+      height: 15px;
+    }
+
+    .Btn--bigger .Btn-imageIcon { /* this is a descendant selector */
+      height: 30px;
+    }
+    ```
+
+questions.Questions--3
+  question
+    :markdown
+      ``` css
+        .DialogBox {
+          border: 1px solid black;
+        }
+
+        .DialogBox-closeBtn--bigger {
+          height: 30px;
+        }
+
+        .DialogBox-closeBtn {
+          background: black;
+          color:white;
+          height: 30px;
+        }
+
+        .DialogBox-expandBtn {
+          background: blue;
+        }
+
+        .DialogBox-expandBtn--bigger {
+          background: blue;
+        }
+      ```
+    answer-toggle-group
+      answer-toggle(correct="false") <code>.DialogBox-closeBtn--bigger</code> is ordered correctly in the CSS file
+      answer-toggle(correct="true") <code>.DialogBox-expandBtn--bigger</code> is ordered correctly in the CSS file
+
+  question
+    h5 Which are valid <em>Element</em> Modifier classes?
+    answer-toggle-group
+      answer-toggle(correct="false") <code>.Btn--smaller</code>
+      answer-toggle(correct="true") <code>.Btn-iconTop--smaller</code>
+      answer-toggle(correct="false") <code>.DialogBox--fun-pullRight</code>
+      answer-toggle(correct="true") <code>.DialogBox-iconTopLeft--pushLeft</code>
+      answer-toggle(correct="false") <code>.SmallText-mini-evenSmaller</code>
+      answer-toggle(correct="true") <code>.Btn-littleLebowskiUrbanAchievers--width100pct</code>
+
+    h5 Which are valid <em>Module</em> Modifier classes?
+    answer-toggle-group
+      answer-toggle(correct="true") <code>.Btn--smaller</code>
+      answer-toggle(correct="false") <code>.Btn-littleLebowskiUrbanAchievers--width100pct</code>
+      answer-toggle(correct="false") <code>.Btn-------bigger</code>
+      answer-toggle(correct="false") <code>.DialogBox-iconTopLeft</code>
+      answer-toggle(correct="false") <code>.SmallText--mini-evenSmaller</code>
+      answer-toggle(correct="true") <code>.DialogBox--funAndColorful</code>
+
+  question
+    h5 Which are valid usages of Modifier classes?
+    answer-toggle-group
+      answer-toggle(correct="true")
+        :markdown
+          ```
+          <button class="Btn Btn--big Btn--colorfulAndSquiggily">
+            Click Me
+            <span class="Btn-iconImage Btn-iconImage--bigger"></span>
+          </button>
+          ```
+      answer-toggle(correct="false")
+        :markdown
+          ```
+          <button class="Btn">
+            Click Me
+            <span class="Btn-iconImage--bigger"></span>
+          </button>
+          ```
+      answer-toggle(correct="true")
+        :markdown
+          ```
+          <div class="SearchBox">
+            <b class="SearchBox-title
+                      SearchBox-title--bigger"></b>
+          </div>
+          ```
+      answer-toggle(correct="false")
+        :markdown
+          ```
+          <button class="Btn">
+            Click Me
+            <span class="Btn-iconImage
+                         Btn-icon--bigger"></span>
+          </button>
+          ```
+      answer-toggle(correct="false")
+        :markdown
+          ```
+          <button class="Btn--bigger">
+            Click Me
+            <span class="Btn-iconImage"></span>
+          </button>
+          ```
