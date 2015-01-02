@@ -27,7 +27,7 @@ If you have questions, comments, or suggestions please [open an Issue](https://g
 
 ----
 
-There is now a [**Walkthrough**](http://gilbox.github.io/futuristic-sass-guide/walkthrough/release/) (still a Work in Progress)
+There is now a [**Walkthrough**](http://gilbox.github.io/futuristic-sass-guide/walkthrough/release/). If you have never used BEM, SMACSS, or similar, reading the Walkthrough is highly recommended.
 
 ----
 
