@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports =
-  angular.module('fsg.walkthrough', [
+  angular.module('bliss.walkthrough', [
     require('../../common/directives').name
   ])
     .directive('walkthrough', require('./walkthroughDirective'));

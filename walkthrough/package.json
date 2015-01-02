@@ -36,5 +36,8 @@
     "angular": "./bower_components/angular/angular.min.js",
     "angular-route": "./bower_components/angular-route/angular-route.min.js"
   },
-  "browserify-shim": {}
+  "browserify-shim": {},
+  "dependencies": {
+    "marked": "^0.3.2"
+  }
 }

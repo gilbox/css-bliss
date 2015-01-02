@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports =
-  angular.module('fsg.common', [
+  angular.module('bliss.common', [
     require('./directives').name,
     require('./filters').name,
     require('./services').name

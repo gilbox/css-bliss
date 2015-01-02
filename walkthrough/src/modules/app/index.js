@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports =
-  angular.module('fsg', [
+  angular.module('bliss', [
     'ngRoute',
     //load extra external dependencies here, e.g.:
     //'ngAnimate',
