@@ -558,6 +558,17 @@ section
     1. **The top-level `.Module` and `.Module--modifier` classes should not have values set for
       the `width`, `top`, `bottom`, `left`, `right`, `margin`, and `float` properties**.
       (The CSS default value is `0` for `margin`, `none` for `float`, and `auto` for the rest.)
+      Instead, **a Module should be positioned and sized by it's parent module, or by Utility classes.**
+      For example,
+
+      ``` html
+      <div class="Hero">
+          <div class="Hero-searchBar">
+              <div class="SearchBar">...</div>
+          </div>
+      </div>
+      ```
+
       If we feel that we must break this rule, then we should do so with Modifiers
       named in such a way that makes such exceptions easy to identifity from within the markup,
       for example:
@@ -594,7 +605,7 @@ section
       > **Note** that the preferred (first) approach is also necessary to fascilitate
       loading multiple CSS files asynchronously
 
-    ## The Big Picture
+    ## Nesting Modules: The Big Picture
 
     Let's take a step back and look at what the nesting structure should look like
     in a complete web page:
@@ -606,7 +617,7 @@ section
         <header class="Header">...</header>
 
         <div class="Hero">
-          <div class="Hero-centerRight">
+          <div class="Hero-middleRight">
             <div class="SearchBar">...</div>
           </div>
         </div>
@@ -623,6 +634,9 @@ section
     </body>
     ```
 
+    Clearly, the styling in this page is the result of combining the CSS Modules
+    `App`, `Header`, `Hero`, `SearchBar`, `ArticleList`, `Article`, and `Footer`.
+    Each of these Modules will have a corresponding and appropriately named file in the `modules/` folder.
     Because we are following the FSG, we can determine some information
     about the structural styling in this webpage just by looking at the markup:
 
@@ -630,8 +644,8 @@ section
       elements that take up the full width of the page (because a block-level element
       will by default fill its parent container).
 
-    - The `.Hero-centerRight` element is used to size and/or position the nested `.SearchBar`
-      Module.
+    - The `.Hero-middleRight` element is used to size and/or position the nested `.SearchBar`
+      Module to the right, middle-aligned vertically.
 
     - The `.ArticleList-article` Element is used to size and/or position the nested `.Article`
       Module.
