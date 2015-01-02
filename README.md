@@ -27,6 +27,10 @@ If you have questions, comments, or suggestions please [open an Issue](https://g
 
 ----
 
+There is now a [**Walkthrough**](http://gilbox.github.io/futuristic-sass-guide/walkthrough/release/). If you have never used BEM, SMACSS, or similar, reading the Walkthrough is highly recommended.
+
+----
+
 # General
 
 - Use class selectors instead of element or attr selectors in most cases.
@@ -58,7 +62,7 @@ TitleCase [Modules](#module), camelCase [Elements](#element). why-not-dashes ? B
       ...
     }
     
-    .MyModule.is-state {
+    .MyModule.isState {
       ...
     }
     
@@ -94,6 +98,7 @@ TitleCase [Modules](#module), camelCase [Elements](#element). why-not-dashes ? B
 - `-camelCase`
 - Each element has an associated module ie: `.MyModule-myElement`
 - Nesting [Modules](#module) should **not** effect the appearance of any Element. 
+- Apply at most **one** Element class per DOM element.
 
 ## Element Modifier
 
@@ -104,11 +109,11 @@ TitleCase [Modules](#module), camelCase [Elements](#element). why-not-dashes ? B
 
 ## State
 
-- `.is-camelCase`
+- `.isCamelCase` (formerly `.is-camelCase`)
 - Often, but not necessarily used in conjunction with JavaScript
-- **No** style except in context with another rule. For example: `.MyModule.is-state`, `.MyModule-myElement.is-state`, `.MyModule-myElement--myModifier.is-state`, `.is-state .MyModule-myElement`, etc.
+- **No** style except in context with another rule. For example: `.MyModule.isState`, `.MyModule-myElement.isState`, `.MyModule-myElement--myModifier.isState`, `.isState .MyModule-myElement`, etc.
 
-## Simple Rules
+## Simple Rules (aka Utility Classes)
 
 - `.camelCase`
 - Simple Rules `.may-containDashes` when the dashed word might imply very similar meaning as a function argument does in javascript. A good use-case for dashed utility classes are device-specific classes such as `.col2-mobile`, `.col2-tablet`, etc.
@@ -122,7 +127,7 @@ Modules promote strict encapsulation. We achieve encapsulation thusly:
 - No module may ever effect any other module by creating a selector that
   reaches inside of another module.
 - **All** classes inside of a module file are namespaced by the module's name
-  (with the notable exception of state (`.is-`) classes)
+  (with the notable exception of state (`.is`) classes)
 - To achieve the strictest form of encapsulation,
   no DOM element should ever be assigned module-namespaced classes from more than one module.
 
@@ -301,6 +306,8 @@ Here we subclass `.Btn` with `.PopupDialog-closeBtn`:
     </div>
 
 Note that the above approach is extremely flexibile. If we want to swap out the `Btn` module for a different button module, it won't require any CSS changes. (And if we have a [pattern](http://ux.mailchimp.com/patterns) [library](http://alistapart.com/blog/post/getting-started-with-pattern-libraries), such a change will be as simple as copy-and-pasting some [markup](http://patterns.alistapart.com/).)
+
+Note also that if we wish to completely avoid Module file load-order specificity bugs and/or we need to load multiple CSS files asynchronously, `PopupDialog-closeBtn` shouldn't subclass `.Btn`, but instead [wrap it inside of another `<div>`](https://github.com/gilbox/futuristic-sass-guide/blob/master/solving-complexity.md#6-non-deterministic-resolution).
 
 ## Alternate approach using Module Modifier
 

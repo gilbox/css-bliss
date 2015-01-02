@@ -88,7 +88,13 @@ and problem solved:
 
 > ***Modules may not share common elements***
 
-What this means is that if we have a module nested inside of
+Without this new rule, the FSG allowed a parent Module to sublass a child Module like this:
+
+    <div class="ParentModule">
+        <div class=ChildModule ParentModule-child">...</div>
+    </div>
+
+However, with this new rule, if we have a module nested inside of
 another module, the parent may only indirectly affect it's child by wrapping it:
 
     <div class="ParentModule">
@@ -133,7 +139,7 @@ Facebook's challenge is that although they try to use modular encapsulation,
 > component, she is going to break all those call sites. It makes you feel fearful
 > of changing code which is very bad. --vjeux
 
-The example that Facebook's vjeux give's of such a selector looks like:
+The example that Facebook's vjeux gives of such a selector looks like:
 
     .product/button > div {
       /* override everything ! */
