@@ -410,13 +410,13 @@ section
 
     # Toggling styles with JavaScript: done 2 ways
 
-    There is no simple answer regarding which type of class should be used to
-    toggle styling. The best we can do is to consider two ways to accomplish
-    the same goal.
+    There is no simple answer regarding which type of class (Modifier or Sate) should be used to
+    toggle styling. Instead, we should consider both options for each particular use-case
+    and choose the one that seems the most intuitive.
 
-    Imagine that our webpage has several widgets that are styled one way
-    for users whom aren't logged in, and another way for users whom are.
-    What follows are two different approaches to accomplish our goal,
+    Consider, for example, that our design calls for several widgets that are styled one way
+    for users whom aren't logged in, and styled another way for users whom are logged in.
+    What follows are the two different approaches to accomplish this objective,
     implemented in AngularJS.
 
     ## Approach #1: Toggling Modifier classes
@@ -455,6 +455,9 @@ section
     }
     ```
 
+    > **Note** that in this first approach we are exclusively using Module Modifiers,
+    however it is possible to use Element Modifiers instead or as well.
+
     ## Approach #2: Toggling State (`.is`) classes
 
     ``` html
@@ -491,8 +494,6 @@ section
     }
     ```
 
-    > **Note** that in this second approach we are exclusively using Module Modifiers,
-    however it is possible to use Element Modifiers instead/also.
 
 questions.Questions--2
   question
