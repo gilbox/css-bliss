@@ -366,3 +366,6 @@ solving-complexity presents some additional guidelines, which, when applied
 in addition to this guide
 help to solve problems faced by the most complex websites.
 
+# Additional Resources
+
+- [include-media](https://github.com/eduardoboucas/include-media) - A nice way to handle @media queries.
