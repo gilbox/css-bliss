@@ -282,14 +282,16 @@ We will inevitably want to nest [Modules](#module) inside of modules. There are 
 
 [`[ pen ]`](http://codepen.io/gilbox/pen/fwBhe?editors=010)
 
-Here we subclass `.Btn` with `.PopupDialog-closeBtn`:
+Here we wrap the `.Btn` element with an `.PopupDialog-closeBtn` element:
 
 ### SCSS
 
+    // modules/_Btn.scss
     .Btn {
       ...
     }
-    
+
+    // modules/_PopupDialog.scss
     .PopupDialog {
       ...
       &-closeBtn {
@@ -303,12 +305,14 @@ Here we subclass `.Btn` with `.PopupDialog-closeBtn`:
 
     <div class="PopupDialog">
       ...
-      <button class="Btn PopupDialog-closeBtn"><i class="closeIco"></i> close</btn>
+      <div class="PopupDialog-closeBtn">
+        <button class="Btn"><i class="closeIco"></i> close</btn>
+      </div>
     </div>
 
-Note that the above approach is extremely flexibile. If we want to swap out the `Btn` module for a different button module, it won't require any CSS changes. (And if we have a [pattern](http://ux.mailchimp.com/patterns) [library](http://alistapart.com/blog/post/getting-started-with-pattern-libraries), such a change will be as simple as copy-and-pasting some [markup](http://patterns.alistapart.com/).)
+Note that the above approach is extremely flexible. If we want to swap out the `Btn` module for a different button module, it won't require any CSS changes. (And if we have a [pattern](http://ux.mailchimp.com/patterns) [library](http://alistapart.com/blog/post/getting-started-with-pattern-libraries), such a change will be as simple as copy-and-pasting some [markup](http://patterns.alistapart.com/).)
 
-Note also that if we wish to completely avoid Module file load-order specificity bugs and/or we need to load multiple CSS files asynchronously, `PopupDialog-closeBtn` shouldn't subclass `.Btn`, but instead [wrap it inside of another `<div>`](https://github.com/gilbox/css-bliss/blob/master/solving-complexity.md#6-non-deterministic-resolution).
+Note also that if we wish to completely avoid Module file load-order specificity bugs and/or we need to load multiple CSS files asynchronously, `PopupDialog-closeBtn` shouldn't subclass `.Btn`, but instead [wrap it inside of another `<div>`](https://github.com/gilbox/css-bliss/blob/master/solving-complexity.md#6-non-deterministic-resolution) as we've done here.
 
 ## Alternate approach using Module Modifier
 
