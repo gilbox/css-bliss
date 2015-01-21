@@ -157,11 +157,11 @@ augment our linter to disallow any rule with a state rule at the end of it.
 
 So now the following is allowed:
 
-    .is-someState.MyModule { ... }
+    .isSomeState.MyModule { ... }
 
 But this isn't:
 
-    .MyModule .is-someState { ... }
+    .MyModule .isSomeState { ... }
 
 So now it becomes trivial to create tooling that prevents encapsulation-busting selectors.
 
