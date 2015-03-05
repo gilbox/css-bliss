@@ -2,7 +2,7 @@
 
 **Note:** Some of these only make sense if you read them in order, because they build on the previous.
 
-# Multiple Modules applied to one tag
+# Multiple Modules applied to same tag
 
 ### Bad
 
@@ -24,7 +24,7 @@
       <button class="Button Button--recalculate">Recalculate</button>
     </div>
 
-# Module and Element classes applied to one tag
+# Module and Element classes applied to same tag
 
 ### Bad
 
