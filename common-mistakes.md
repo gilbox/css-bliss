@@ -34,7 +34,7 @@
   
 ### Good
 
-    .PriceWidget-submit {
+    .PriceWidget-submit {   // wraps the button
       width: 60px;
     }
   
@@ -48,7 +48,7 @@
   
 ### Good
 
-    .PriceWidget-submit {
+    .PriceWidget-submit {   // wraps the button
       padding-left: 10px;
     }
   
