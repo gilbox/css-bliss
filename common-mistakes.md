@@ -24,6 +24,22 @@
       <button class="Button Button--recalculate">Recalculate</button>
     </div>
 
+# Module and Element classes applied to one tag
+
+### Bad
+
+    <div class="PriceWidget PriceWidget-submit">
+      <button class="Button">Recalculate</button>
+    </div>
+      
+### Good
+
+    <div class="PriceWidget">
+      <div class="PriceWidget-submit">
+        <button class="Button">Recalculate</button>
+      </div>
+    </div>
+
 # Width Applied at Module-level
 
 ### Bad
