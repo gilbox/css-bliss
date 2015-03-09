@@ -25,6 +25,7 @@ There is now a [**Walkthrough**](http://gilbox.github.io/css-bliss/walkthrough/r
 - [Namespacing](#namespacing)
 - [Linter](#linter)
 - [Solving Complexity](#solving-complexity)
+- [Common Mistakes](#common-mistakes)
 
 ----
 
@@ -377,6 +378,12 @@ by Facebook's [vjeux](https://speakerdeck.com/vjeux).
 solving-complexity presents some additional guidelines, which, when applied
 in addition to this guide
 help to solve problems faced by the most complex websites.
+
+
+# Common Mistakes
+
+[common-mistakes.md](https://github.com/gilbox/css-bliss/blob/master/common-mistakes.md)
+is a living document in this repo where I record common mistakes and their solutions.
 
 # Additional Resources
 
