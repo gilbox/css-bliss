@@ -343,7 +343,15 @@ Note that the above approach is inflexible because in the future we won't be abl
 
 # z-index
 
-All z-index rules reference `$zindexVariables` in `_zindex.scss`. This [creates a central place](http://css-tricks.com/handling-z-index/) to manage z-indexes accross the application.
+A ***globally-scoped*** z-index is any z-index who's [stacking context](http://philipwalton.com/articles/what-no-one-told-you-about-z-index/) is the `<html>` tag or any tag which we have deem to be the top-level stacking context of the page.
+
+All ***globally-scoped*** z-index rules should reference `$zindexVariables` in `_zindex.scss`. This [creates a central place](http://css-tricks.com/handling-z-index/) to manage z-indexes accross the application.
+
+Note that there are many ways to create a stacking context, these [three]((http://philipwalton.com/articles/what-no-one-told-you-about-z-index/)) are the most common:
+
+> 1. When an element is the root element of a document (the <html> element)
+> 2. When an element has a position value other than static and a z-index value other than auto
+> 3. When an element has an opacity value less than 1
 
 # Namespacing
 
