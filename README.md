@@ -349,7 +349,7 @@ All ***globally-scoped*** z-index rules should reference `$zindexVariables` in `
 
 Note that there are many ways to create a stacking context, these [three](http://philipwalton.com/articles/what-no-one-told-you-about-z-index/) are the most common:
 
-> 1. When an element is the root element of a document (the <html> element)
+> 1. When an element is the root element of a document (the `<html>` element)
 > 2. When an element has a position value other than static and a z-index value other than auto
 > 3. When an element has an opacity value less than 1
 
