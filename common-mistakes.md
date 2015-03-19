@@ -66,6 +66,22 @@
 
     .PriceWidget-submit {   // wraps the button
       padding-left: 10px;
+    }  
+    
+# Margin Applied to Module Modifier
+
+While css-bliss doesn't explicitly prohibit doing this, it should generally be avoided. Overuse of margin is bad for modularity. Whenever you find yourself utilizing `margin`, consider using `padding` on the parent element instead.
+
+### Not Great
+
+    .Button--margin10px {
+      margin: 10px 0;
+    }
+  
+### Good
+
+    .PriceWidget-submit {   // wraps the button
+      padding: 10px 0;
     }
   
   
