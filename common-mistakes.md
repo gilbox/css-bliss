@@ -68,6 +68,23 @@
       padding-left: 10px;
     }  
     
+    
+# Width Applied to Module Modifier
+
+While css-bliss doesn't explicitly prohibit doing this, it should generally be avoided. Whenever you find yourself utilizing `width` on a Module Modifier, consider applying `width` to the parent element instead.
+
+### Bad
+
+    .Button--width60px {
+      width: 60px;
+    }
+  
+### Good
+
+    .PriceWidget-submit {   // wraps the button
+      width: 60px;
+    }
+    
 # Margin Applied to Module Modifier
 
 While css-bliss doesn't explicitly prohibit doing this, it should generally be avoided. Overuse of margin is bad for modularity. Whenever you find yourself utilizing `margin`, consider using `padding` on the parent element instead.
