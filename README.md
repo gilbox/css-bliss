@@ -6,6 +6,10 @@ A CSS style guide for small to enormous projects, without all that pomp and cruf
 ---
 There is now a [**Walkthrough**](http://gilbox.github.io/css-bliss/walkthrough/release/). If you have never used BEM, SMACSS, or similar, reading the Walkthrough is highly recommended.
 
+---
+There is now a **[linter](https://github.com/gilbox/blint)**. 
+Enforcing `css-bliss` rules without it is very difficult.
+
 ----
 
 - [General](#general)
@@ -364,11 +368,10 @@ I don't like how it negatively effects readability, but if we need to namespace,
     
 # Linter
 
-This tool does not exist, but it would be cool if it did.
-
-- Confirm proper naming
-- Enforce flat [`@extend`](#extend)s
-
+The css-bliss linter is **[blint](https://github.com/gilbox/blint)**, 
+it helps enforce the naming conventions and proper module structure. 
+It is nearly impossible to maintain a modular css structure for a complex
+web project without good tools to enforce the myriad of rules.
 
 # Solving Complexity
 
