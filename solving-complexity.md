@@ -2,8 +2,7 @@
 
 This document is about solving
 [Facebook's CSS complexity problems](https://speakerdeck.com/vjeux/react-css-in-js)
-with the [futuristic-sass-guide](https://github.com/gilbox/futuristic-sass-guide)
-(the FSG).
+with [CSS Bliss](https://github.com/gilbox/css-bliss).
 
 Facebook's challenges are applicable to any very complex websites with many developers.
 Or any situation where CSS is bundled into multiple files and loaded asynchronously,
@@ -11,10 +10,10 @@ and often loaded lazily.
 
 ## Terminology
 
-Terms below like [CSS Module](https://github.com/gilbox/futuristic-sass-guide#modules),
-[CSS Module Element](https://github.com/gilbox/futuristic-sass-guide#element),
-and [utility classes](https://github.com/gilbox/futuristic-sass-guide#simple-rules)
-are references to definitions within the FSG.
+Terms below like [CSS Module](https://github.com/gilbox/css-bliss#modules),
+[CSS Module Element](https://github.com/gilbox/css-bliss#element),
+and [utility classes](https://github.com/gilbox/css-bliss#simple-rules)
+are references to definitions within CSS Bliss.
 
 
 ## 1 Globals
@@ -41,7 +40,7 @@ an application with multiple style sheets.
 
 We think of CSS Modules inside of the `modules/` folder as
 dependencies of our javascript components.
-The FSG says nothing specific about the relationship between
+CSS Bliss says nothing specific about the relationship between
 your javascript code and the CSS modules. That is, there is
 no explicit dependency management. You are expected to list
 required CSS modules inside of application.scss.
@@ -82,13 +81,13 @@ to a single element:
     )} />
 
 This presented load-order problems with asynchronously loaded
-CSS bundles. With the FSG we almost have completely eliminated
+CSS bundles. With CSS Bliss we almost have completely eliminated
 the possibility of this even happening. Just one more constraint,
 and problem solved:
 
 > ***Modules may not share common elements***
 
-Without this new rule, the FSG allowed a parent Module to sublass a child Module like this:
+Without this new rule, CSS Bliss allowed a parent Module to sublass a child Module like this:
 
     <div class="ParentModule">
         <div class=ChildModule ParentModule-child">...</div>
@@ -145,24 +144,24 @@ The example that Facebook's vjeux gives of such a selector looks like:
       /* override everything ! */
     }
 
-The FSG doesn't allow modules to contain any class name other than those
+CSS Bliss doesn't allow modules to contain any class name other than those
 namespaced by the module name. Combine this with a slight tweak of the following
-FSG rule, and this problem is (almost) completely solved:
+CSS Bliss rule, and this problem is (almost) completely solved:
 
 > Use class selectors instead of element or attr selectors in ~~most~~ **all** cases.
 
-Note that the FSG does allow the use of state classes (`is-`) pretty much anywhere in the markup.
+Note that CSS Bliss does allow the use of state classes (`is-`) pretty much anywhere in the markup.
 How do we prevent state classes from inviting developers to circumvent the linter?
 Well, since state classes are not allowed to have styles of their own we can
 augment our linter to disallow any rule with a state rule at the end of it.
 
 So now the following is allowed:
 
-    .is-someState.MyModule { ... }
+    .isSomeState.MyModule { ... }
 
 But this isn't:
 
-    .MyModule .is-someState { ... }
+    .MyModule .isSomeState { ... }
 
 So now it becomes trivial to create tooling that prevents encapsulation-busting selectors.
 

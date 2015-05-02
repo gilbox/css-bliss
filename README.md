@@ -1,7 +1,16 @@
 CSS Bliss
 =========
 
-A CSS style guide for small to enormous projects, without all that pomp and cruft. Many ideas borrowed from [BEM](http://bem.info), [SMACSS](https://smacss.com/), [OOCSS](http://oocss.org/), [SUITECSS](https://github.com/suitcss). This style guide uses SCSS. However, for any sized project, the only features that are really beneficial in a CSS preprocessor are **variables** and **mixins**. Therefore, this guide will be useful for any preprocessor or no preprocessor at all as there is very little focus on features that aren't already part of vanilla CSS.
+A CSS style guide for small to enormous projects, without all that pomp and cruft. Many ideas borrowed from [BEM](http://bem.info), [SMACSS](https://smacss.com/), [OOCSS](http://oocss.org/), [SUITECSS](https://github.com/suitcss). This style guide uses SCSS. However, the only truly beneficial preprocessor-specific features we discuss are [**variables**, **mixins**, and **partials**](http://sass-lang.com/guide). Therefore, this guide will be useful for any preprocessor or no preprocessor at all as there is very little focus on features that aren't already part of vanilla CSS.
+
+---
+There is now a [**Walkthrough**](http://gilbox.github.io/css-bliss/walkthrough/release/). If you have never used BEM, SMACSS, or similar, reading the Walkthrough is highly recommended.
+
+---
+There is now a **[linter](https://github.com/gilbox/blint)**. 
+Enforcing `css-bliss` rules without it is very difficult.
+
+----
 
 - [General](#general)
 - [Naming](#naming)
@@ -20,14 +29,11 @@ A CSS style guide for small to enormous projects, without all that pomp and cruf
 - [Namespacing](#namespacing)
 - [Linter](#linter)
 - [Solving Complexity](#solving-complexity)
+- [Common Mistakes](#common-mistakes)
 
 ----
 
 If you have questions, comments, or suggestions please [open an Issue](https://github.com/gilbox/css-bliss/issues). And of course, [PRs](https://github.com/gilbox/css-bliss/pulls) are welcome.
-
-----
-
-There is now a [**Walkthrough**](http://gilbox.github.io/css-bliss/walkthrough/release/). If you have never used BEM, SMACSS, or similar, reading the Walkthrough is highly recommended.
 
 ----
 
@@ -113,10 +119,10 @@ TitleCase [Modules](#module), camelCase [Elements](#element). why-not-dashes ? B
 - Often, but not necessarily used in conjunction with JavaScript
 - **No** style except in context with another rule. For example: `.MyModule.isState`, `.MyModule-myElement.isState`, `.MyModule-myElement--myModifier.isState`, `.isState .MyModule-myElement`, etc.
 
-## Simple Rules (aka Utility Classes)
+## Utility Classes (aka Simple Rules)
 
 - `.camelCase`
-- Simple Rules `.may-containDashes` when the dashed word might imply very similar meaning as a function argument does in javascript. A good use-case for dashed utility classes are device-specific classes such as `.col2-mobile`, `.col2-tablet`, etc.
+- Utility Classes `.may-containDashes` when the dashed word might imply very similar meaning as a function argument does in javascript. A good use-case for dashed utility classes are device-specific classes such as `.col2-mobile`, `.col2-tablet`, etc.
 - These rules should be completely flat. They include what are often called [utility classes](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md#u-utilityName) and [layout rules](http://smacss.com/book/type-layout).
 
     
@@ -281,14 +287,16 @@ We will inevitably want to nest [Modules](#module) inside of modules. There are 
 
 [`[ pen ]`](http://codepen.io/gilbox/pen/fwBhe?editors=010)
 
-Here we subclass `.Btn` with `.PopupDialog-closeBtn`:
+Here we wrap the `.Btn` element with an `.PopupDialog-closeBtn` element:
 
 ### SCSS
 
+    // modules/_Btn.scss
     .Btn {
       ...
     }
-    
+
+    // modules/_PopupDialog.scss
     .PopupDialog {
       ...
       &-closeBtn {
@@ -302,12 +310,14 @@ Here we subclass `.Btn` with `.PopupDialog-closeBtn`:
 
     <div class="PopupDialog">
       ...
-      <button class="Btn PopupDialog-closeBtn"><i class="closeIco"></i> close</btn>
+      <div class="PopupDialog-closeBtn">
+        <button class="Btn"><i class="closeIco"></i> close</btn>
+      </div>
     </div>
 
-Note that the above approach is extremely flexibile. If we want to swap out the `Btn` module for a different button module, it won't require any CSS changes. (And if we have a [pattern](http://ux.mailchimp.com/patterns) [library](http://alistapart.com/blog/post/getting-started-with-pattern-libraries), such a change will be as simple as copy-and-pasting some [markup](http://patterns.alistapart.com/).)
+Note that the above approach is extremely flexible. If we want to swap out the `Btn` module for a different button module, it won't require any CSS changes. (And if we have a [pattern](http://ux.mailchimp.com/patterns) [library](http://alistapart.com/blog/post/getting-started-with-pattern-libraries), such a change will be as simple as copy-and-pasting some [markup](http://patterns.alistapart.com/).)
 
-Note also that if we wish to completely avoid Module file load-order specificity bugs and/or we need to load multiple CSS files asynchronously, `PopupDialog-closeBtn` shouldn't subclass `.Btn`, but instead [wrap it inside of another `<div>`](https://github.com/gilbox/css-bliss/blob/master/solving-complexity.md#6-non-deterministic-resolution).
+Note also that if we wish to completely avoid Module file load-order specificity bugs and/or we need to load multiple CSS files asynchronously, `PopupDialog-closeBtn` shouldn't subclass `.Btn`, but instead [wrap it inside of another `<div>`](https://github.com/gilbox/css-bliss/blob/master/solving-complexity.md#6-non-deterministic-resolution) as we've done here.
 
 ## Alternate approach using Module Modifier
 
@@ -338,7 +348,15 @@ Note that the above approach is inflexible because in the future we won't be abl
 
 # z-index
 
-All z-index rules reference `$zindexVariables` in `_zindex.scss`. This [creates a central place](http://css-tricks.com/handling-z-index/) to manage z-indexes accross the application.
+A ***globally-scoped*** z-index is any z-index who's [stacking context](http://philipwalton.com/articles/what-no-one-told-you-about-z-index/) is the `<html>` tag or another tag which we deem to be the top-level stacking context of the page.
+
+All ***globally-scoped*** z-index rules should reference `$zindexVariables` in `_zindex.scss`. This [creates a central place](http://css-tricks.com/handling-z-index/) to manage z-indexes accross the application.
+
+Note that there are many ways to create a stacking context, these [three](http://philipwalton.com/articles/what-no-one-told-you-about-z-index/) are the most common:
+
+> 1. When an element is the root element of a document (the `<html>` element)
+> 2. When an element has a position value other than static and a z-index value other than auto
+> 3. When an element has an opacity value less than 1
 
 # Namespacing
 
@@ -350,11 +368,10 @@ I don't like how it negatively effects readability, but if we need to namespace,
     
 # Linter
 
-This tool does not exist, but it would be cool if it did.
-
-- Confirm proper naming
-- Enforce flat [`@extend`](#extend)s
-
+The css-bliss linter is **[blint](https://github.com/gilbox/blint)**, 
+it helps enforce the naming conventions and proper module structure. 
+It is nearly impossible to maintain a modular css structure for a complex
+web project without good tools to enforce the myriad of rules.
 
 # Solving Complexity
 
@@ -365,3 +382,12 @@ solving-complexity presents some additional guidelines, which, when applied
 in addition to this guide
 help to solve problems faced by the most complex websites.
 
+
+# Common Mistakes
+
+[common-mistakes.md](https://github.com/gilbox/css-bliss/blob/master/common-mistakes.md)
+is a living document in this repo where I record common mistakes and their solutions.
+
+# Additional Resources
+
+- [include-media](https://github.com/eduardoboucas/include-media) - A nice way to handle @media queries.
