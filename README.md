@@ -391,3 +391,14 @@ is a living document in this repo where I record common mistakes and their solut
 # Additional Resources
 
 - [include-media](https://github.com/eduardoboucas/include-media) - A nice way to handle @media queries.
+
+# The Future
+
+Unfortunately, in large part the need for something like css-bliss is a result of the poor scalability of vanilla CSS. There are various efforts in the works to drastically improve this situation. Most of this work is being conducted in the context of React, which is arguably the most cutting-edge JavaScript UI library. Some of these solutions are useable right now, while others are still experimental. Check out the following projects:
+
+- [webpack CSS modules](https://github.com/css-modules/webpack-demo) (started with the article [The End of Global CSS](https://medium.com/seek-ui-engineering/the-end-of-global-css-90d2a4a06284))
+- [react-inline](https://github.com/martinandert/react-inline)
+- [react-in-style](https://github.com/ericwooley/react-in-style)
+- [jsxstyle](https://github.com/petehunt/jsxstyle)
+- [VirtualCSS](https://github.com/VirtualCSS/planning)
+
