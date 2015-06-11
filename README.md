@@ -30,6 +30,8 @@ Enforcing `css-bliss` rules without it is very difficult.
 - [Linter](#linter)
 - [Solving Complexity](#solving-complexity)
 - [Common Mistakes](#common-mistakes)
+- [Additional Resources](#additional-resources)
+- [The Future](#the-future)
 
 ----
 
