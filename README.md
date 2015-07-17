@@ -404,4 +404,5 @@ Unfortunately, in large part the need for something like css-bliss is a result o
 - [jsxstyle](https://github.com/petehunt/jsxstyle)
 - [VirtualCSS](https://github.com/VirtualCSS/planning)
 - [stilr](https://github.com/kodyl/stilr)
+- [react-inline-style](https://github.com/dowjones/react-inline-style)
 
