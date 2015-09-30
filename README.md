@@ -352,7 +352,7 @@ Note that the above approach is inflexible because in the future we won't be abl
 
 A ***globally-scoped*** z-index is any z-index who's [stacking context](http://philipwalton.com/articles/what-no-one-told-you-about-z-index/) is the `<html>` tag or another tag which we deem to be the top-level stacking context of the page.
 
-All ***globally-scoped*** z-index rules should reference `$zindexVariables` in `_zindex.scss`. This [creates a central place](http://css-tricks.com/handling-z-index/) to manage z-indexes accross the application.
+All ***globally-scoped*** z-index rules should reference `$zindexVariables` in `_zindex.scss`. This [creates a central place](http://css-tricks.com/handling-z-index/) to manage z-indexes across the application.
 
 Note that there are many ways to create a stacking context, these [three](http://philipwalton.com/articles/what-no-one-told-you-about-z-index/) are the most common:
 
