@@ -405,4 +405,5 @@ Unfortunately, in large part the need for something like css-bliss is a result o
 - [VirtualCSS](https://github.com/VirtualCSS/planning)
 - [stilr](https://github.com/kodyl/stilr)
 - [react-inline-style](https://github.com/dowjones/react-inline-style)
+- [aphrodite](https://github.com/Khan/aphrodite)
 
