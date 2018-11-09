@@ -42,7 +42,7 @@ If you have questions, comments, or suggestions please [open an Issue](https://g
 # General
 
 - Use class selectors instead of element or attr selectors in most cases.
-- SASS gives us too much power. In part the purpose of this guide is to restrict our use of that power.
+- Sass gives us too much power; in part the purpose of this guide is to restrict our use of that power.
 - Try to avoid nesting, except as described in the DRY section.
 - **Keep [Modules](#module) small**. When in doubt, create a new [Module](#module) instead of bloating an existing [Module](#module).
 - A class name will almost never have more than 3 dashes, ie: `.MyModule-myElement--myModifier`
@@ -52,7 +52,7 @@ If you have questions, comments, or suggestions please [open an Issue](https://g
 
 TitleCase [Modules](#module), camelCase [Elements](#element). why-not-dashes ? Because cased names are more readable (very objective explanation, I know). Furthermore, if we see a class name that doesntStartWithTitleCase we know that it's not a module.
 
-**Note**: The following example does *not* match the conventions laid out in the [DRY](#dry) section because **this is the compiled CSS code, *not* the SASS code**.
+**Note**: The following example does *not* match the conventions laid out in the [DRY](#dry) section because **this is the compiled CSS code, *not* the Sass code**.
 
     .MyModule {
       ...
@@ -277,9 +277,9 @@ Create a new file for each [Module](#modules) and it's [Module Modifiers](#modul
      ├─── _zindex.scss
      └─── application.scss
      
-In the example above, the sass compiler is compiling `application.scss` and all of the other files are being `@import`ed from `application.scss` (is this the best way?).
+In the example above, the Sass compiler is compiling `application.scss` and all of the other files are being `@import`ed from `application.scss` (is this the best way?).
 
-Use the SASS underscore naming convention whereby **all partials begin with underscore**.
+Use the Sass underscore naming convention whereby **all partials begin with underscore**.
  
 # Positioning a Module inside of a Module
 
